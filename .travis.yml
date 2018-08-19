@@ -18,6 +18,14 @@ cache:
 before_script:
   - npm install -g @angular/cli
 
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
+
 script:
   - ng build --prod --aot
   - ng test
