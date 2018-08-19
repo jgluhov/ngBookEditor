@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "docs": "ng build --prod --output-path=docs --base-href=/ngBookEditor/"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
