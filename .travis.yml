@@ -28,4 +28,4 @@ deploy:
 
 script:
   - ng build --prod --aot --base-href /ngBookEditor/
-  - ng test
+  - ng test --watch=false
