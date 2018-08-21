@@ -1,15 +1,15 @@
-import { Author } from './author.model';
+import { AuthorModel } from './author.model';
 
 describe('Author', () => {
   let author;
 
   it('should create an instance', () => {
-    expect(new Author()).toBeTruthy();
+    expect(new AuthorModel()).toBeTruthy();
   });
 
   describe('when we initialize Author', () => {
     beforeEach(() => {
-      author = new Author('John', 'Smith');
+      author = new AuthorModel('John', 'Smith');
     });
 
     it('should have correct fullname', () => {
