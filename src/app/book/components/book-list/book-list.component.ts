@@ -21,8 +21,6 @@ export class BookListComponent implements OnInit {
 
   ngOnInit() {
     this.books = this.store.select(fromBook.selectAll);
-
-    this.books.subscribe(console.log);
   }
 
   createBook() {
