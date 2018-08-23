@@ -1,7 +1,23 @@
-import { ActionReducerMap } from '@ngrx/store';
-import { bookReducer } from '../book/book.reducer';
+import { ActionReducerMap, MetaReducer, ActionReducer, Action } from '@ngrx/store';
+import { localStorageSync } from 'ngrx-store-localstorage';
+import * as fromBook from '../book/book.reducer';
+
+type ReducerState = fromBook.State;
 
 export const reducers: ActionReducerMap<any> = {
-  book: bookReducer
+  book: fromBook.bookReducer
 };
+
+const localStorageSyncReducer = (
+  reducer: ActionReducer<ReducerState>
+): ActionReducer<ReducerState> => {
+  return localStorageSync({
+    keys: ['book'],
+    rehydrate: true
+  })(reducer);
+}
+
+export const metaReducers: Array<MetaReducer<ReducerState, Action>> = [
+  localStorageSyncReducer
+];
 

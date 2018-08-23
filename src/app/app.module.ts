@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BookModule } from './book/book.module';
 import { reducers } from './reducers';
+import { metaReducers } from './reducers/index';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { reducers } from './reducers';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
