@@ -1,5 +1,5 @@
-import { Author } from '@models/author';
-import { Base } from '@models';
+import { Author } from '@models/author.model';
+import { Base } from '@models/base.model';
 
 export class Book extends Base {
   publisherName: string;

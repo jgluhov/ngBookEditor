@@ -1,10 +1,10 @@
 import * as actions from './book.actions';
-import { EntityState, createEntityAdapter } from '@ngrx/entity'
+import { EntityState, createEntityAdapter } from '@ngrx/entity';
 import { createFeatureSelector } from '@ngrx/store';
-import { BookModel } from './models/book/book.model';
+import { Book } from '@models/book.model';
 
-export const bookAdapter = createEntityAdapter<BookModel>()
-export interface State extends EntityState<BookModel> {};
+export const bookAdapter = createEntityAdapter<Book>();
+export interface State extends EntityState<Book> {}
 
 const defaultBook = {
   ids: [],
@@ -18,7 +18,7 @@ export const bookReducer = (
   action: actions.BookActions
 ) => {
 
-  switch(action.type) {
+  switch (action.type) {
 
     case actions.CREATE:
       return bookAdapter.addOne(action.book, state);
@@ -36,7 +36,7 @@ export const bookReducer = (
       return state;
   }
 
-}
+};
 
 export const getBookState = createFeatureSelector<State>('book');
 

@@ -1,4 +1,4 @@
-import { Base } from '@models';
+import { Base } from '@models/base.model';
 
 export class Author extends Base {
   constructor(
