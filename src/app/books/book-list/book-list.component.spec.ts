@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from '@reducers';
 import { BookService } from '../services/book.service';
 import { BookCardComponent } from '../book-card/book-card.component';
+import { BookDetailsComponent } from '../book-details/book-details.component';
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
@@ -26,7 +27,7 @@ describe('BookListComponent', () => {
           provide: BookService, useValue: bookService
         }
       ],
-      declarations: [ BookListComponent, BookCardComponent ]
+      declarations: [ BookListComponent, BookCardComponent, BookDetailsComponent ]
     })
     .compileComponents();
   }));

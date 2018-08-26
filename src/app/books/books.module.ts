@@ -7,6 +7,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BooksRoutingModule } from './books-routing.module';
 import { BookService } from './services/book.service';
 import { BookCardComponent } from './book-card/book-card.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,10 @@ import { BookCardComponent } from './book-card/book-card.component';
     HttpClientModule
   ],
   providers: [BookService],
-  declarations: [BookListComponent, BookCardComponent]
+  declarations: [
+    BookListComponent,
+    BookCardComponent,
+    BookDetailsComponent
+  ]
 })
 export class BooksModule { }
