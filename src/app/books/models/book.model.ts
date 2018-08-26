@@ -1,7 +1,8 @@
 import { UUID } from 'angular2-uuid';
-import { Author } from './author.model';
+import { AuthorModel } from './author.model';
+import { Deserializable } from './deserialize.model';
 
-export class Book {
+export class BookModel implements Deserializable {
   id = UUID.UUID();
   publisher: string;
   year: Date;
@@ -10,8 +11,13 @@ export class Book {
   imageUrl: string;
 
   constructor(
-    public title: string,
-    public authors: Author[],
-    public pageCount: number
+    public title: string = '',
+    public authors: AuthorModel[] = [],
+    public pageCount: number = 0
   ) {}
+
+  deserialize(input: object): this {
+    Object.assign(this, input);
+    return this;
+  }
 }
