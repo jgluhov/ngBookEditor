@@ -5,8 +5,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BookModule } from './book/book.module';
-import { reducers } from './reducers';
-import { metaReducers } from './reducers/index';
+import { reducers, metaReducers } from '@reducers';
 
 @NgModule({
   declarations: [

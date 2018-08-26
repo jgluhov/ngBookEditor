@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { BookModel } from './models/book/book.model';
+import { Book } from '@models/book';
 
 export const CREATE = '[Books] Create';
 export const UPDATE = '[Books] Update';
@@ -8,7 +8,7 @@ export const DELETE = '[Books] Delete';
 export class Create implements Action {
   readonly type = CREATE;
 
-  constructor(public book: BookModel) {
+  constructor(public book: Book) {
   }
 }
 
@@ -17,7 +17,7 @@ export class Update implements Action {
 
   constructor(
     public id: string,
-    public changes: Partial<BookModel>
+    public changes: Partial<Book>
   ) {
   }
 }
