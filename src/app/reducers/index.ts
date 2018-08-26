@@ -12,7 +12,7 @@ const localStorageSyncReducer = (
   reducer: ActionReducer<ReducerState>
 ): ActionReducer<ReducerState> => {
   return localStorageSync({
-    keys: ['book'],
+    keys: ['books'],
     rehydrate: true
   })(reducer);
 }

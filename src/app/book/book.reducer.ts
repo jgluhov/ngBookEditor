@@ -38,7 +38,7 @@ export const bookReducer = (
 
 };
 
-export const getBookState = createFeatureSelector<State>('book');
+export const getBookState = createFeatureSelector<State>('books');
 
 export const {
   selectIds,

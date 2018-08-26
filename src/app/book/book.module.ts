@@ -6,7 +6,7 @@ import { bookReducer } from './book.reducer';
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.forFeature('book', bookReducer)
+    StoreModule.forFeature('books', bookReducer)
   ],
   declarations: [],
   exports: []
