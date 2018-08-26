@@ -1,701 +1,701 @@
 [
   {
-    "author": "Chinua Achebe",
+    "authors": [{ "name": "Chinua Achebe", "surename": "" }],
     "imageUrl": "images/things-fall-apart.jpg",
-    "pages": 209,
+    "pageCount": 209,
     "title": "Things Fall Apart",
     "year": 1958
   },
   {
-    "author": "Hans Christian Andersen",
+    "authors": [{ "name": "Hans Christian Andersen", "surename": "" }],
     "imageUrl": "images/fairy-tales.jpg",
-    "pages": 784,
+    "pageCount": 784,
     "title": "Fairy tales",
     "year": 1836
   },
   {
-    "author": "Dante Alighieri",
+    "authors": [{ "name": "Dante Alighieri", "surename": "" }],
     "imageUrl": "images/the-divine-comedy.jpg",
-    "pages": 928,
+    "pageCount": 928,
     "title": "The Divine Comedy",
     "year": 1315
   },
   {
-    "author": "Unknown",
+    "authors": [{ "name": "Unknown", "surename": "" }],
     "imageUrl": "images/the-epic-of-gilgamesh.jpg",
-    "pages": 160,
+    "pageCount": 160,
     "title": "The Epic Of Gilgamesh",
     "year": -1700
   },
   {
-    "author": "Unknown",
+    "authors": [{ "name": "Unknown", "surename": "" }],
     "imageUrl": "images/the-book-of-job.jpg",
-    "pages": 176,
+    "pageCount": 176,
     "title": "The Book Of Job",
     "year": -600
   },
   {
-    "author": "Unknown",
+    "authors": [{ "name": "Unknown", "surename": "" }],
     "imageUrl": "images/one-thousand-and-one-nights.jpg",
-    "pages": 288,
+    "pageCount": 288,
     "title": "One Thousand and One Nights",
     "year": 1200
   },
   {
-    "author": "Unknown",
+    "authors": [{ "name": "Unknown", "surename": "" }],
     "imageUrl": "images/njals-saga.jpg",
-    "pages": 384,
+    "pageCount": 384,
     "title": "Nj\u00e1l's Saga",
     "year": 1350
   },
   {
-    "author": "Jane Austen",
+    "authors": [{ "name": "Jane Austen", "surename": "" }],
     "imageUrl": "images/pride-and-prejudice.jpg",
-    "pages": 226,
+    "pageCount": 226,
     "title": "Pride and Prejudice",
     "year": 1813
   },
   {
-    "author": "Honor\u00e9 de Balzac",
+    "authors": [{ "name": "Honor\u00e9 de Balzac", "surename": "" }],
     "imageUrl": "images/le-pere-goriot.jpg",
-    "pages": 443,
+    "pageCount": 443,
     "title": "Le P\u00e8re Goriot",
     "year": 1835
   },
   {
-    "author": "Samuel Beckett",
+    "authors": [{ "name": "Samuel Beckett", "surename": "" }],
     "imageUrl": "images/molloy-malone-dies-the-unnamable.jpg",
-    "pages": 256,
+    "pageCount": 256,
     "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
     "year": 1952
   },
   {
-    "author": "Giovanni Boccaccio",
+    "authors": [{ "name": "Giovanni Boccaccio", "surename": "" }],
     "imageUrl": "images/the-decameron.jpg",
-    "pages": 1024,
+    "pageCount": 1024,
     "title": "The Decameron",
     "year": 1351
   },
   {
-    "author": "Jorge Luis Borges",
+    "authors": [{ "name": "Jorge Luis Borges", "surename": "" }],
     "imageUrl": "images/ficciones.jpg",
-    "pages": 224,
+    "pageCount": 224,
     "title": "Ficciones",
     "year": 1965
   },
   {
-    "author": "Emily Bront\u00eb",
+    "authors": [{ "name": "Emily Bront\u00eb", "surename": "" }],
     "imageUrl": "images/wuthering-heights.jpg",
-    "pages": 342,
+    "pageCount": 342,
     "title": "Wuthering Heights",
     "year": 1847
   },
   {
-    "author": "Albert Camus",
+    "authors": [{ "name": "Albert Camus", "surename": "" }],
     "imageUrl": "images/l-etranger.jpg",
-    "pages": 185,
+    "pageCount": 185,
     "title": "The Stranger",
     "year": 1942
   },
   {
-    "author": "Paul Celan",
+    "authors": [{ "name": "Paul Celan", "surename": "" }],
     "imageUrl": "images/poems-paul-celan.jpg",
-    "pages": 320,
+    "pageCount": 320,
     "title": "Poems",
     "year": 1952
   },
   {
-    "author": "Louis-Ferdinand C\u00e9line",
+    "authors": [{ "name": "Louis-Ferdinand C\u00e9line", "surename": "" }],
     "imageUrl": "images/voyage-au-bout-de-la-nuit.jpg",
-    "pages": 505,
+    "pageCount": 505,
     "title": "Journey to the End of the Night",
     "year": 1932
   },
   {
-    "author": "Miguel de Cervantes",
+    "authors": [{ "name": "Miguel de Cervantes", "surename": "" }],
     "imageUrl": "images/don-quijote-de-la-mancha.jpg",
-    "pages": 1056,
+    "pageCount": 1056,
     "title": "Don Quijote De La Mancha",
     "year": 1610
   },
   {
-    "author": "Geoffrey Chaucer",
+    "authors": [{ "name": "Geoffrey Chaucer", "surename": "" }],
     "imageUrl": "images/the-canterbury-tales.jpg",
-    "pages": 544,
+    "pageCount": 544,
     "title": "The Canterbury Tales",
     "year": 1450
   },
   {
-    "author": "Anton Chekhov",
+    "authors": [{ "name": "Anton Chekhov", "surename": "" }],
     "imageUrl": "images/stories-of-anton-chekhov.jpg",
-    "pages": 194,
+    "pageCount": 194,
     "title": "Stories",
     "year": 1886
   },
   {
-    "author": "Joseph Conrad",
+    "authors": [{ "name": "Joseph Conrad", "surename": "" }],
     "imageUrl": "images/nostromo.jpg",
-    "pages": 320,
+    "pageCount": 320,
     "title": "Nostromo",
     "year": 1904
   },
   {
-    "author": "Charles Dickens",
+    "authors": [{ "name": "Charles Dickens", "surename": "" }],
     "imageUrl": "images/great-expectations.jpg",
-    "pages": 194,
+    "pageCount": 194,
     "title": "Great Expectations",
     "year": 1861
   },
   {
-    "author": "Denis Diderot",
+    "authors": [{ "name": "Denis Diderot", "surename": "" }],
     "imageUrl": "images/jacques-the-fatalist.jpg",
-    "pages": 596,
+    "pageCount": 596,
     "title": "Jacques the Fatalist",
     "year": 1796
   },
   {
-    "author": "Alfred D\u00f6blin",
+    "authors": [{ "name": "Alfred D\u00f6blin", "surename": "" }],
     "imageUrl": "images/berlin-alexanderplatz.jpg",
-    "pages": 600,
+    "pageCount": 600,
     "title": "Berlin Alexanderplatz",
     "year": 1929
   },
   {
-    "author": "Fyodor Dostoevsky",
+    "authors": [{ "name": "Fyodor Dostoevsky", "surename": "" }],
     "imageUrl": "images/crime-and-punishment.jpg",
-    "pages": 551,
+    "pageCount": 551,
     "title": "Crime and Punishment",
     "year": 1866
   },
   {
-    "author": "Fyodor Dostoevsky",
+    "authors": [{ "name": "Fyodor Dostoevsky", "surename": "" }],
     "imageUrl": "images/the-idiot.jpg",
-    "pages": 656,
+    "pageCount": 656,
     "title": "The Idiot",
     "year": 1869
   },
   {
-    "author": "Fyodor Dostoevsky",
+    "authors": [{ "name": "Fyodor Dostoevsky", "surename": "" }],
     "imageUrl": "images/the-possessed.jpg",
-    "pages": 768,
+    "pageCount": 768,
     "title": "The Possessed",
     "year": 1872
   },
   {
-    "author": "Fyodor Dostoevsky",
+    "authors": [{ "name": "Fyodor Dostoevsky", "surename": "" }],
     "imageUrl": "images/the-brothers-karamazov.jpg",
-    "pages": 824,
+    "pageCount": 824,
     "title": "The Brothers Karamazov",
     "year": 1880
   },
   {
-    "author": "George Eliot",
+    "authors": [{ "name": "George Eliot", "surename": "" }],
     "imageUrl": "images/middlemarch.jpg",
-    "pages": 800,
+    "pageCount": 800,
     "title": "Middlemarch",
     "year": 1871
   },
   {
-    "author": "Ralph Ellison",
+    "authors": [{ "name": "Ralph Ellison", "surename": "" }],
     "imageUrl": "images/invisible-man.jpg",
-    "pages": 581,
+    "pageCount": 581,
     "title": "Invisible Man",
     "year": 1952
   },
   {
-    "author": "Euripides",
+    "authors": [{ "name": "Euripides", "surename": "" }],
     "imageUrl": "images/medea.jpg",
-    "pages": 104,
+    "pageCount": 104,
     "title": "Medea",
     "year": -431
   },
   {
-    "author": "William Faulkner",
+    "authors": [{ "name": "William Faulkner", "surename": "" }],
     "imageUrl": "images/absalom-absalom.jpg",
-    "pages": 313,
+    "pageCount": 313,
     "title": "Absalom, Absalom!",
     "year": 1936
   },
   {
-    "author": "William Faulkner",
+    "authors": [{ "name": "William Faulkner", "surename": "" }],
     "imageUrl": "images/the-sound-and-the-fury.jpg",
-    "pages": 326,
+    "pageCount": 326,
     "title": "The Sound and the Fury",
     "year": 1929
   },
   {
-    "author": "Gustave Flaubert",
+    "authors": [{ "name": "Gustave Flaubert", "surename": "" }],
     "imageUrl": "images/madame-bovary.jpg",
-    "pages": 528,
+    "pageCount": 528,
     "title": "Madame Bovary",
     "year": 1857
   },
   {
-    "author": "Gustave Flaubert",
+    "authors": [{ "name": "Gustave Flaubert", "surename": "" }],
     "imageUrl": "images/l-education-sentimentale.jpg",
-    "pages": 606,
+    "pageCount": 606,
     "title": "Sentimental Education",
     "year": 1869
   },
   {
-    "author": "Federico Garc\u00eda Lorca",
+    "authors": [{ "name": "Federico Garc\u00eda Lorca", "surename": "" }],
     "imageUrl": "images/gypsy-ballads.jpg",
-    "pages": 218,
+    "pageCount": 218,
     "title": "Gypsy Ballads",
     "year": 1928
   },
   {
-    "author": "Gabriel Garc\u00eda M\u00e1rquez",
+    "authors": [{ "name": "Gabriel Garc\u00eda M\u00e1rquez", "surename": "" }],
     "imageUrl": "images/one-hundred-years-of-solitude.jpg",
-    "pages": 417,
+    "pageCount": 417,
     "title": "One Hundred Years of Solitude",
     "year": 1967
   },
   {
-    "author": "Gabriel Garc\u00eda M\u00e1rquez",
+    "authors": [{ "name": "Gabriel Garc\u00eda M\u00e1rquez", "surename": "" }],
     "imageUrl": "images/love-in-the-time-of-cholera.jpg",
-    "pages": 368,
+    "pageCount": 368,
     "title": "Love in the Time of Cholera",
     "year": 1985
   },
   {
-    "author": "Johann Wolfgang von Goethe",
+    "authors": [{ "name": "Johann Wolfgang von Goethe", "surename": "" }],
     "imageUrl": "images/faust.jpg",
-    "pages": 158,
+    "pageCount": 158,
     "title": "Faust",
     "year": 1832
   },
   {
-    "author": "Nikolai Gogol",
+    "authors": [{ "name": "Nikolai Gogol", "surename": "" }],
     "imageUrl": "images/dead-souls.jpg",
-    "pages": 432,
+    "pageCount": 432,
     "title": "Dead Souls",
     "year": 1842
   },
   {
-    "author": "G\u00fcnter Grass",
+    "authors": [{ "name": "G\u00fcnter Grass", "surename": "" }],
     "imageUrl": "images/the-tin-drum.jpg",
-    "pages": 600,
+    "pageCount": 600,
     "title": "The Tin Drum",
     "year": 1959
   },
   {
-    "author": "Jo\u00e3o Guimar\u00e3es Rosa",
+    "authors": [{ "name": "Jo\u00e3o Guimar\u00e3es Rosa", "surename": "" }],
     "imageUrl": "images/the-devil-to-pay-in-the-backlands.jpg",
-    "pages": 494,
+    "pageCount": 494,
     "title": "The Devil to Pay in the Backlands",
     "year": 1956
   },
   {
-    "author": "Knut Hamsun",
+    "authors": [{ "name": "Knut Hamsun", "surename": "" }],
     "imageUrl": "images/hunger.jpg",
-    "pages": 176,
+    "pageCount": 176,
     "title": "Hunger",
     "year": 1890
   },
   {
-    "author": "Ernest Hemingway",
+    "authors": [{ "name": "Ernest Hemingway", "surename": "" }],
     "imageUrl": "images/the-old-man-and-the-sea.jpg",
-    "pages": 128,
+    "pageCount": 128,
     "title": "The Old Man and the Sea",
     "year": 1952
   },
   {
-    "author": "Homer",
+    "authors": [{ "name": "Homer", "surename": "" }],
     "imageUrl": "images/the-iliad-of-homer.jpg",
-    "pages": 608,
+    "pageCount": 608,
     "title": "Iliad",
     "year": -735
   },
   {
-    "author": "Homer",
+    "authors": [{ "name": "Homer", "surename": "" }],
     "imageUrl": "images/the-odyssey-of-homer.jpg",
-    "pages": 374,
+    "pageCount": 374,
     "title": "Odyssey",
     "year": -800
   },
   {
-    "author": "Henrik Ibsen",
+    "authors": [{ "name": "Henrik Ibsen", "surename": "" }],
     "imageUrl": "images/a-Dolls-house.jpg",
-    "pages": 68,
+    "pageCount": 68,
     "title": "A Doll's House",
     "year": 1879
   },
   {
-    "author": "James Joyce",
+    "authors": [{ "name": "James Joyce", "surename": "" }],
     "imageUrl": "images/ulysses.jpg",
-    "pages": 228,
+    "pageCount": 228,
     "title": "Ulysses",
     "year": 1922
   },
   {
-    "author": "Franz Kafka",
+    "authors": [{ "name": "Franz Kafka", "surename": "" }],
     "imageUrl": "images/stories-of-franz-kafka.jpg",
-    "pages": 488,
+    "pageCount": 488,
     "title": "Stories",
     "year": 1924
   },
   {
-    "author": "Franz Kafka",
+    "authors": [{ "name": "Franz Kafka", "surename": "" }],
     "imageUrl": "images/the-trial.jpg",
-    "pages": 160,
+    "pageCount": 160,
     "title": "The Trial",
     "year": 1925
   },
   {
-    "author": "Franz Kafka",
+    "authors": [{ "name": "Franz Kafka", "surename": "" }],
     "imageUrl": "images/the-castle.jpg",
-    "pages": 352,
+    "pageCount": 352,
     "title": "The Castle",
     "year": 1926
   },
   {
-    "author": "K\u0101lid\u0101sa",
+    "authors": [{ "name": "K\u0101lid\u0101sa", "surename": "" }],
     "imageUrl": "images/the-recognition-of-shakuntala.jpg",
-    "pages": 147,
+    "pageCount": 147,
     "title": "The recognition of Shakuntala",
     "year": 150
   },
   {
-    "author": "Yasunari Kawabata",
+    "authors": [{ "name": "Yasunari Kawabata", "surename": "" }],
     "imageUrl": "images/the-sound-of-the-mountain.jpg",
-    "pages": 288,
+    "pageCount": 288,
     "title": "The Sound of the Mountain",
     "year": 1954
   },
   {
-    "author": "Nikos Kazantzakis",
+    "authors": [{ "name": "Nikos Kazantzakis", "surename": "" }],
     "imageUrl": "images/zorba-the-greek.jpg",
-    "pages": 368,
+    "pageCount": 368,
     "title": "Zorba the Greek",
     "year": 1946
   },
   {
-    "author": "D. H. Lawrence",
+    "authors": [{ "name": "D. H. Lawrence", "surename": "" }],
     "imageUrl": "images/sons-and-lovers.jpg",
-    "pages": 432,
+    "pageCount": 432,
     "title": "Sons and Lovers",
     "year": 1913
   },
   {
-    "author": "Halld\u00f3r Laxness",
+    "authors": [{ "name": "Halld\u00f3r Laxness", "surename": "" }],
     "imageUrl": "images/independent-people.jpg",
-    "pages": 470,
+    "pageCount": 470,
     "title": "Independent People",
     "year": 1934
   },
   {
-    "author": "Giacomo Leopardi",
+    "authors": [{ "name": "Giacomo Leopardi", "surename": "" }],
     "imageUrl": "images/poems-giacomo-leopardi.jpg",
-    "pages": 184,
+    "pageCount": 184,
     "title": "Poems",
     "year": 1818
   },
   {
-    "author": "Doris Lessing",
+    "authors": [{ "name": "Doris Lessing", "surename": "" }],
     "imageUrl": "images/the-golden-notebook.jpg",
-    "pages": 688,
+    "pageCount": 688,
     "title": "The Golden Notebook",
     "year": 1962
   },
   {
-    "author": "Astrid Lindgren",
+    "authors": [{ "name": "Astrid Lindgren", "surename": "" }],
     "imageUrl": "images/pippi-longstocking.jpg",
-    "pages": 160,
+    "pageCount": 160,
     "title": "Pippi Longstocking",
     "year": 1945
   },
   {
-    "author": "Lu Xun",
+    "authors": [{ "name": "Lu Xun", "surename": "" }],
     "imageUrl": "images/diary-of-a-madman.jpg",
-    "pages": 389,
+    "pageCount": 389,
     "title": "Diary of a Madman",
     "year": 1918
   },
   {
-    "author": "Naguib Mahfouz",
+    "authors": [{ "name": "Naguib Mahfouz", "surename": "" }],
     "imageUrl": "images/children-of-gebelawi.jpg",
-    "pages": 355,
+    "pageCount": 355,
     "title": "Children of Gebelawi",
     "year": 1959
   },
   {
-    "author": "Thomas Mann",
+    "authors": [{ "name": "Thomas Mann", "surename": "" }],
     "imageUrl": "images/buddenbrooks.jpg",
-    "pages": 736,
+    "pageCount": 736,
     "title": "Buddenbrooks",
     "year": 1901
   },
   {
-    "author": "Thomas Mann",
+    "authors": [{ "name": "Thomas Mann", "surename": "" }],
     "imageUrl": "images/the-magic-mountain.jpg",
-    "pages": 720,
+    "pageCount": 720,
     "title": "The Magic Mountain",
     "year": 1924
   },
   {
-    "author": "Herman Melville",
+    "authors": [{ "name": "Herman Melville", "surename": "" }],
     "imageUrl": "images/moby-dick.jpg",
-    "pages": 378,
+    "pageCount": 378,
     "title": "Moby Dick",
     "year": 1851
   },
   {
-    "author": "Michel de Montaigne",
+    "authors": [{ "name": "Michel de Montaigne", "surename": "" }],
     "imageUrl": "images/essais.jpg",
-    "pages": 404,
+    "pageCount": 404,
     "title": "Essays",
     "year": 1595
   },
   {
-    "author": "Elsa Morante",
+    "authors": [{ "name": "Elsa Morante", "surename": "" }],
     "imageUrl": "images/history.jpg",
-    "pages": 600,
+    "pageCount": 600,
     "title": "History",
     "year": 1974
   },
   {
-    "author": "Toni Morrison",
+    "authors": [{ "name": "Toni Morrison", "surename": "" }],
     "imageUrl": "images/beloved.jpg",
-    "pages": 321,
+    "pageCount": 321,
     "title": "Beloved",
     "year": 1987
   },
   {
-    "author": "Murasaki Shikibu",
+    "authors": [{ "name": "Murasaki Shikibu", "surename": "" }],
     "imageUrl": "images/the-tale-of-genji.jpg",
-    "pages": 1360,
+    "pageCount": 1360,
     "title": "The Tale of Genji",
     "year": 1006
   },
   {
-    "author": "Robert Musil",
+    "authors": [{ "name": "Robert Musil", "surename": "" }],
     "imageUrl": "images/the-man-without-qualities.jpg",
-    "pages": 365,
+    "pageCount": 365,
     "title": "The Man Without Qualities",
     "year": 1931
   },
   {
-    "author": "Vladimir Nabokov",
+    "authors": [{ "name": "Vladimir Nabokov", "surename": "" }],
     "imageUrl": "images/lolita.jpg",
-    "pages": 317,
+    "pageCount": 317,
     "title": "Lolita",
     "year": 1955
   },
   {
-    "author": "George Orwell",
+    "authors": [{ "name": "George Orwell", "surename": "" }],
     "imageUrl": "images/nineteen-eighty-four.jpg",
-    "pages": 272,
+    "pageCount": 272,
     "title": "Nineteen Eighty-Four",
     "year": 1949
   },
   {
-    "author": "Ovid",
+    "authors": [{ "name": "Ovid", "surename": "" }],
     "imageUrl": "images/the-metamorphoses-of-ovid.jpg",
-    "pages": 576,
+    "pageCount": 576,
     "title": "Metamorphoses",
     "year": 100
   },
   {
-    "author": "Fernando Pessoa",
+    "authors": [{ "name": "Fernando Pessoa", "surename": "" }],
     "imageUrl": "images/the-book-of-disquiet.jpg",
-    "pages": 272,
+    "pageCount": 272,
     "title": "The Book of Disquiet",
     "year": 1928
   },
   {
-    "author": "Edgar Allan Poe",
+    "authors": [{ "name": "Edgar Allan Poe", "surename": "" }],
     "imageUrl": "images/tales-and-poems-of-edgar-allan-poe.jpg",
-    "pages": 842,
+    "pageCount": 842,
     "title": "Tales",
     "year": 1950
   },
   {
-    "author": "Marcel Proust",
+    "authors": [{ "name": "Marcel Proust", "surename": "" }],
     "imageUrl": "images/a-la-recherche-du-temps-perdu.jpg",
-    "pages": 2408,
+    "pageCount": 2408,
     "title": "In Search of Lost Time",
     "year": 1920
   },
   {
-    "author": "Fran\u00e7ois Rabelais",
+    "authors": [{ "name": "Fran\u00e7ois Rabelais", "surename": "" }],
     "imageUrl": "images/gargantua-and-pantagruel.jpg",
-    "pages": 623,
+    "pageCount": 623,
     "title": "Gargantua and Pantagruel",
     "year": 1533
   },
   {
-    "author": "Juan Rulfo",
+    "authors": [{ "name": "Juan Rulfo", "surename": "" }],
     "imageUrl": "images/pedro-paramo.jpg",
-    "pages": 124,
+    "pageCount": 124,
     "title": "Pedro P\u00e1ramo",
     "year": 1955
   },
   {
-    "author": "Rumi",
+    "authors": [{ "name": "Rumi", "surename": "" }],
     "imageUrl": "images/the-masnavi.jpg",
-    "pages": 438,
+    "pageCount": 438,
     "title": "The Masnavi",
     "year": 1236
   },
   {
-    "author": "Salman Rushdie",
+    "authors": [{ "name": "Salman Rushdie", "surename": "" }],
     "imageUrl": "images/midnights-children.jpg",
-    "pages": 536,
+    "pageCount": 536,
     "title": "Midnight's Children",
     "year": 1981
   },
   {
-    "author": "Saadi",
+    "authors": [{ "name": "Saadi", "surename": "" }],
     "imageUrl": "images/bostan.jpg",
-    "pages": 298,
+    "pageCount": 298,
     "title": "Bostan",
     "year": 1257
   },
   {
-    "author": "Tayeb Salih",
+    "authors": [{ "name": "Tayeb Salih", "surename": "" }],
     "imageUrl": "images/season-of-migration-to-the-north.jpg",
-    "pages": 139,
+    "pageCount": 139,
     "title": "Season of Migration to the North",
     "year": 1966
   },
   {
-    "author": "Jos\u00e9 Saramago",
+    "authors": [{ "name": "Jos\u00e9 Saramago", "surename": "" }],
     "imageUrl": "images/blindness.jpg",
-    "pages": 352,
+    "pageCount": 352,
     "title": "Blindness",
     "year": 1995
   },
   {
-    "author": "William Shakespeare",
+    "authors": [{ "name": "William Shakespeare", "surename": "" }],
     "imageUrl": "images/hamlet.jpg",
-    "pages": 432,
+    "pageCount": 432,
     "title": "Hamlet",
     "year": 1603
   },
   {
-    "author": "William Shakespeare",
+    "authors": [{ "name": "William Shakespeare", "surename": "" }],
     "imageUrl": "images/king-lear.jpg",
-    "pages": 384,
+    "pageCount": 384,
     "title": "King Lear",
     "year": 1608
   },
   {
-    "author": "William Shakespeare",
+    "authors": [{ "name": "William Shakespeare", "surename": "" }],
     "imageUrl": "images/othello.jpg",
-    "pages": 314,
+    "pageCount": 314,
     "title": "Othello",
     "year": 1609
   },
   {
-    "author": "Sophocles",
+    "authors": [{ "name": "Sophocles", "surename": "" }],
     "imageUrl": "images/oedipus-the-king.jpg",
-    "pages": 88,
+    "pageCount": 88,
     "title": "Oedipus the King",
     "year": -430
   },
   {
-    "author": "Stendhal",
+    "authors": [{ "name": "Stendhal", "surename": "" }],
     "imageUrl": "images/le-rouge-et-le-noir.jpg",
-    "pages": 576,
+    "pageCount": 576,
     "title": "The Red and the Black",
     "year": 1830
   },
   {
-    "author": "Laurence Sterne",
+    "authors": [{ "name": "Laurence Sterne", "surename": "" }],
     "imageUrl": "images/the-life-and-opinions-of-tristram-shandy.jpg",
-    "pages": 640,
+    "pageCount": 640,
     "title": "The Life And Opinions of Tristram Shandy",
     "year": 1760
   },
   {
-    "author": "Italo Svevo",
+    "authors": [{ "name": "Italo Svevo", "surename": "" }],
     "imageUrl": "images/confessions-of-zeno.jpg",
-    "pages": 412,
+    "pageCount": 412,
     "title": "Confessions of Zeno",
     "year": 1923
   },
   {
-    "author": "Jonathan Swift",
+    "authors": [{ "name": "Jonathan Swift", "surename": "" }],
     "imageUrl": "images/gullivers-travels.jpg",
-    "pages": 178,
+    "pageCount": 178,
     "title": "Gulliver's Travels",
     "year": 1726
   },
   {
-    "author": "Leo Tolstoy",
+    "authors": [{ "name": "Leo Tolstoy", "surename": "" }],
     "imageUrl": "images/war-and-peace.jpg",
-    "pages": 1296,
+    "pageCount": 1296,
     "title": "War and Peace",
     "year": 1867
   },
   {
-    "author": "Leo Tolstoy",
+    "authors": [{ "name": "Leo Tolstoy", "surename": "" }],
     "imageUrl": "images/anna-karenina.jpg",
-    "pages": 864,
+    "pageCount": 864,
     "title": "Anna Karenina",
     "year": 1877
   },
   {
-    "author": "Leo Tolstoy",
+    "authors": [{ "name": "Leo Tolstoy", "surename": "" }],
     "imageUrl": "images/the-death-of-ivan-ilyich.jpg",
-    "pages": 92,
+    "pageCount": 92,
     "title": "The Death of Ivan Ilyich",
     "year": 1886
   },
   {
-    "author": "Mark Twain",
+    "authors": [{ "name": "Mark Twain", "surename": "" }],
     "imageUrl": "images/the-adventures-of-huckleberry-finn.jpg",
-    "pages": 224,
+    "pageCount": 224,
     "title": "The Adventures of Huckleberry Finn",
     "year": 1884
   },
   {
-    "author": "Valmiki",
+    "authors": [{ "name": "Valmiki", "surename": "" }],
     "imageUrl": "images/ramayana.jpg",
-    "pages": 152,
+    "pageCount": 152,
     "title": "Ramayana",
     "year": -450
   },
   {
-    "author": "Virgil",
+    "authors": [{ "name": "Virgil", "surename": "" }],
     "imageUrl": "images/the-aeneid.jpg",
-    "pages": 442,
+    "pageCount": 442,
     "title": "The Aeneid",
     "year": -23
   },
   {
-    "author": "Vyasa",
+    "authors": [{ "name": "Vyasa", "surename": "" }],
     "imageUrl": "images/the-mahab-harata.jpg",
-    "pages": 276,
+    "pageCount": 276,
     "title": "Mahabharata",
     "year": -700
   },
   {
-    "author": "Walt Whitman",
+    "authors": [{ "name": "Walt Whitman", "surename": "" }],
     "imageUrl": "images/leaves-of-grass.jpg",
-    "pages": 152,
+    "pageCount": 152,
     "title": "Leaves of Grass",
     "year": 1855
   },
   {
-    "author": "Virginia Woolf",
+    "authors": [{ "name": "Virginia Woolf", "surename": "" }],
     "imageUrl": "images/mrs-dalloway.jpg",
-    "pages": 216,
+    "pageCount": 216,
     "title": "Mrs Dalloway",
     "year": 1925
   },
   {
-    "author": "Virginia Woolf",
+    "authors": [{ "name": "Virginia Woolf", "surename": "" }],
     "imageUrl": "images/to-the-lighthouse.jpg",
-    "pages": 209,
+    "pageCount": 209,
     "title": "To the Lighthouse",
     "year": 1927
   },
   {
-    "author": "Marguerite Yourcenar",
+    "authors": [{ "name": "Marguerite Yourcenar", "surename": "" }],
     "imageUrl": "images/memoirs-of-hadrian.jpg",
-    "pages": 408,
+    "pageCount": 408,
     "title": "Memoirs of Hadrian",
     "year": 1951
   }

@@ -1,7 +1,7 @@
 import * as actions from './books.actions';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 import { createFeatureSelector } from '@ngrx/store';
-import { Book } from '@models/book.model';
+import { Book } from './models/book.model';
 
 export const booksAdapter = createEntityAdapter<Book>();
 export interface State extends EntityState<Book> {}

@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Book } from '@models/book.model';
+import { Book } from './models/book.model';
 
 export const CREATE = '[Books] Create';
 export const UPDATE = '[Books] Update';

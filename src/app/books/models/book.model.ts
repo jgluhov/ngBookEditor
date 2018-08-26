@@ -1,10 +1,10 @@
 import { UUID } from 'angular2-uuid';
-import { Author } from '@models/author.model';
+import { Author } from './author.model';
 
 export class Book {
   id = UUID.UUID();
-  publisherName: string;
-  publicationDate: Date;
+  publisher: string;
+  year: Date;
   releaseDate: Date;
   isbn: string;
   imageUrl: string;
@@ -12,6 +12,6 @@ export class Book {
   constructor(
     public title: string,
     public authors: Author[],
-    public pages: number
+    public pageCount: number
   ) {}
 }
