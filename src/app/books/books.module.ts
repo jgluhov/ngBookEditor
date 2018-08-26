@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import { bookReducer } from './book.reducer';
+import { booksReducer } from './books.reducer';
 
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.forFeature('books', bookReducer)
-  ],
-  declarations: [],
-  exports: []
+    StoreModule.forFeature('books', booksReducer)
+  ]
 })
-export class BookModule { }
+export class BooksModule { }

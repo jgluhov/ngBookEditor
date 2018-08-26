@@ -1,9 +1,9 @@
-import { Base } from '@models/base.model';
+import { UUID } from 'angular2-uuid';
 
-export class Author extends Base {
+export class Author {
+  id = UUID.UUID();
+
   constructor(
     public name: string = '',
-  ) {
-    super();
-  }
+  ) {}
 }
