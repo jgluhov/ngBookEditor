@@ -6,7 +6,14 @@ import { BookModel } from '../models/book.model';
   template: `
     <div #container></div>
     <ng-template #bookDetailsTemplate let-book="book">
-      Hello {{ book?.title }}
+      <div class="details">
+        <img [src]="book?.imageUrl" class="details__image" />
+        <ul class="details__list">
+          <li class="list__item"><span class="details__term">Title:</span>{{book?.title}}</li>
+          <li class="list__item"><span class="details__term">Pages:</span>{{book?.pageCount}}</li>
+        </ul>
+      </div>
+
     </ng-template>
   `,
   styleUrls: ['./book-details.component.css'],
@@ -16,6 +23,10 @@ export class BookDetailsComponent implements OnInit, AfterViewInit {
   @ViewChild('container', { read: ViewContainerRef }) container: ViewContainerRef;
 
   @Input() set book(book: BookModel) {
+    if (!book) {
+      return;
+    }
+
     this.container.clear();
     this.container.createEmbeddedView(this.bookDetailsTemplate, { book });
   }

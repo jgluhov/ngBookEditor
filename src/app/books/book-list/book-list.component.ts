@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import * as fromBook from '../book.reducer';
 import * as bookActions from '../book.actions';
 import { BookService } from '../services/book.service';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { BookCardComponent } from '../book-card/book-card.component';
 
 @Component({

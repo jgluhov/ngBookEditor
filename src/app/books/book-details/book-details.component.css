@@ -1,0 +1,28 @@
+.details {
+  position: fixed;
+  padding: 10px;
+  width: calc(100% - var(--book-list-width) - 20px);
+  display: flex;
+}
+
+.details__image {
+  max-height: 300px;
+  max-width: 300px;
+}
+
+
+.details__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  flex-direction: column;
+}
+
+.details__term {
+  font-weight: 600;
+  padding: 5px;
+}
+
+.list__item {
+  margin-bottom: 5px;
+}

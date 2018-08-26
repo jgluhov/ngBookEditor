@@ -7,16 +7,13 @@ import { reducers, metaReducers } from '@reducers';
 import { BookService } from '../services/book.service';
 import { BookCardComponent } from '../book-card/book-card.component';
 import { BookDetailsComponent } from '../book-details/book-details.component';
+import { bookServiceMock } from '../services/book.service.mock';
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
   let fixture: ComponentFixture<BookListComponent>;
-  let bookService;
-  beforeEach(async(() => {
-    bookService = {
-      getBooks: () => of([])
-    };
 
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientModule,
@@ -24,7 +21,7 @@ describe('BookListComponent', () => {
       ],
       providers: [
         {
-          provide: BookService, useValue: bookService
+          provide: BookService, useValue: bookServiceMock
         }
       ],
       declarations: [ BookListComponent, BookCardComponent, BookDetailsComponent ]

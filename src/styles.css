@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+:root {
+  --book-list-width: 300px;
+}
+
 body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   background-color: #eeeeee;

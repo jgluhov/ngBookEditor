@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BookModel } from '../models/book.model';
 import { AuthorModel } from '../models/author.model';
+import { BookService } from '../services/book.service';
 
 @Component({
   selector: 'app-book-card',
@@ -8,7 +9,8 @@ import { AuthorModel } from '../models/author.model';
     <div class="book-card" (click)="selected.emit()" [ngClass]="handleActiveClass()">
       <div class="book-card__title">{{book.title}}</div>
       <div class="book-card__details">
-        <span class="details__term">Written by</span> {{ this.formatAuthors(book.authors) }}
+        <span class="details__term">Written by</span>
+        {{ bookService.formatAuthors(book.authors) }}
         <span class="details__term"> in </span> {{ book.year }}
       </div>
     </div>
@@ -19,13 +21,9 @@ export class BookCardComponent implements OnInit {
   active = false;
   @Input() book: BookModel;
   @Output() selected = new EventEmitter<void>();
-  constructor() { }
+  constructor(public bookService: BookService) { }
 
   ngOnInit() {
-  }
-
-  formatAuthors(authors: AuthorModel[]) {
-    return authors.map(author => `${author.firstName} ${author.lastName}`.trim()).join(', ');
   }
 
   handleActiveClass() {
