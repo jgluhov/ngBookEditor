@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
+  template: `
+    it works
+  `,
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
