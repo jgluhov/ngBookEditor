@@ -4,7 +4,7 @@ export class Author {
   id = UUID.UUID();
 
   constructor(
-    public name: string = '',
-    public surename: string = ''
+    public firstName: string = '',
+    public lastName: string = ''
   ) {}
 }
