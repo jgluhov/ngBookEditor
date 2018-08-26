@@ -1,0 +1,23 @@
+.book-card {
+  padding: 15px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 3px;
+  margin-bottom: 2px;
+}
+
+.book-card:hover, .book-card--active {
+  background-color: #eeeeee;
+}
+
+.book-card__title {
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.details__term {
+  font-size: 13px;
+  color: grey;
+}

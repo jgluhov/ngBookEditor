@@ -25,14 +25,14 @@
     "imageUrl": "images/the-epic-of-gilgamesh.jpg",
     "pageCount": 160,
     "title": "The Epic Of Gilgamesh",
-    "year": -1700
+    "year": 1700
   },
   {
     "authors": [{ "firstName": "Unknown", "lastName": "" }],
     "imageUrl": "images/the-book-of-job.jpg",
     "pageCount": 176,
     "title": "The Book Of Job",
-    "year": -600
+    "year": 600
   },
   {
     "authors": [{ "firstName": "Unknown", "lastName": "" }],
@@ -662,14 +662,14 @@
     "imageUrl": "images/the-aeneid.jpg",
     "pageCount": 442,
     "title": "The Aeneid",
-    "year": -23
+    "year": 1223
   },
   {
     "authors": [{ "firstName": "Vyasa", "lastName": "" }],
     "imageUrl": "images/the-mahab-harata.jpg",
     "pageCount": 276,
     "title": "Mahabharata",
-    "year": -700
+    "year": 7000
   },
   {
     "authors": [{ "firstName": "Walt Whitman", "lastName": "" }],
