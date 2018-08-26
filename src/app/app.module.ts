@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { BooksModule } from './books/books.module';
 import { reducers, metaReducers } from '@reducers';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { reducers, metaReducers } from '@reducers';
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
-    BooksModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
