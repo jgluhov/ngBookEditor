@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BookModel } from '../models/book.model';
-import { AuthorModel } from '../models/author.model';
 import { BookService } from '../services/book.service';
 
 @Component({
