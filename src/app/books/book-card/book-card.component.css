@@ -17,7 +17,7 @@
   text-overflow: ellipsis;
 }
 
-.details__term {
+.description__term {
   font-size: 13px;
   color: grey;
 }

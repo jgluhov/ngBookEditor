@@ -5,15 +5,16 @@ import * as fromBook from '../book.reducer';
 import * as bookActions from '../book.actions';
 import { BookService } from '../services/book.service';
 import { Observable } from 'rxjs';
-import { BookCardComponent } from '../book-card/book-card.component';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-book-list',
   template: `
     <div class="book-list__cards">
-      <app-book-card *ngFor="let book of books | async; let i=index"
+      <app-book-card *ngFor="let book of books$ | async; let i=index"
+        [active]="isSelected(book)"
         [book]="book"
-        (selected)="selectCard(book, i)">
+        (selected)="handleSelect(book)">
       </app-book-card>
     </div>
     <div class="book-list__details">
@@ -23,8 +24,7 @@ import { BookCardComponent } from '../book-card/book-card.component';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  @ViewChildren(BookCardComponent) cards: QueryList<BookCardComponent>;
-  books: Observable<BookModel[]>;
+  books$: Observable<BookModel[]>;
   selectedBook: BookModel;
 
   constructor(
@@ -32,10 +32,20 @@ export class BookListComponent implements OnInit {
     private store: Store<fromBook.State>
   ) { }
 
-  selectCard(book: BookModel, index: number) {
-    this.cards.forEach(card => card.active = false);
-    this.cards.toArray()[index].active = true;
+  handleSelect(book: BookModel) {
     this.selectedBook = book;
+  }
+
+  isSelected(book: BookModel) {
+    return this.selectedBook === book;
+  }
+
+  handleSelection = (books: BookModel[]) => {
+    if (!books.length && this.selectedBook) {
+      return;
+    }
+
+    this.handleSelect(books[0]);
   }
 
   ngOnInit() {
@@ -44,6 +54,8 @@ export class BookListComponent implements OnInit {
         this.store.dispatch( new bookActions.AddAll(books) );
       });
 
-    this.books = this.store.select(fromBook.selectAll);
+    this.books$ = this.store.select(fromBook.selectAll);
+
+    this.books$.subscribe(this.handleSelection);
   }
 }

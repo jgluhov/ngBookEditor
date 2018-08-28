@@ -7,17 +7,17 @@ import { BookService } from '../services/book.service';
   template: `
     <div class="book-card" (click)="selected.emit()" [ngClass]="handleActiveClass()">
       <div class="book-card__title">{{book.title}}</div>
-      <div class="book-card__details">
-        <span class="details__term">Written by</span>
+      <div class="book-card__description">
+        <span class="description__term">Written by</span>
         {{ bookService.formatAuthors(book.authors) }}
-        <span class="details__term"> in </span> {{ book.year }}
+        <span class="description__term"> in </span> {{ book.year }}
       </div>
     </div>
   `,
   styleUrls: ['./book-card.component.css']
 })
 export class BookCardComponent implements OnInit {
-  active = false;
+  @Input() active: boolean;
   @Input() book: BookModel;
   @Output() selected = new EventEmitter<void>();
   constructor(public bookService: BookService) { }
