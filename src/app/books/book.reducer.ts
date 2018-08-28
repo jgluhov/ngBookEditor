@@ -1,12 +1,15 @@
 import { BookActionTypes, BookActions } from './book.actions';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { BookModel } from './models/book.model';
 
 export const bookAdapter = createEntityAdapter<BookModel>();
-export interface State extends EntityState<BookModel> {}
+export interface State extends EntityState<BookModel> {
+  selectedId: string | null;
+}
 
 const defaultBook = {
+  selectedId: null,
   ids: [],
   entities: {}
 };
@@ -35,17 +38,42 @@ export const bookReducer = (
     case BookActionTypes.ADD_ALL:
       return bookAdapter.addAll(action.books, state);
 
+    case BookActionTypes.SELECT_ONE:
+      return {
+        ...state,
+        selectedId: action.id,
+      };
+
     default:
       return state;
   }
 
 };
 
+// Selectors
 export const getBooksState = createFeatureSelector<State>('books');
+
+export const selectedId = (state: State) => state.selectedId;
+
+export const getBooksEntitiesState = createSelector(
+  getBooksState,
+  state => state.entities
+);
+
+export const getSelectedId = createSelector(
+  getBooksState,
+  state => state.selectedId
+);
+
+export const getSelectedBook = createSelector(
+  getBooksEntitiesState,
+  getSelectedId,
+  (entities, id) => entities[id] || null
+);
 
 export const {
   selectIds,
   selectEntities,
   selectAll,
-  selectTotal
+  selectTotal,
 } = bookAdapter.getSelectors(getBooksState);
