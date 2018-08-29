@@ -4,6 +4,7 @@ import { BookCardComponent } from './book-card.component';
 import { BookModel } from '../models/book.model';
 import { BookService } from '../services/book.service';
 import { bookServiceMock } from '../services/book.service.mock';
+import { AuthorsPipe } from '../pipes/authors.pipe';
 
 describe('BookCardComponent', () => {
   let component: BookCardComponent;
@@ -11,7 +12,7 @@ describe('BookCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookCardComponent ],
+      declarations: [ BookCardComponent, AuthorsPipe ],
       providers: [
         {
           provide: BookService, useValue: bookServiceMock

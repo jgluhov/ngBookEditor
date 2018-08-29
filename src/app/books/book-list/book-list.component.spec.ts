@@ -8,6 +8,7 @@ import { BookService } from '../services/book.service';
 import { BookCardComponent } from '../book-card/book-card.component';
 import { BookDetailsComponent } from '../book-details/book-details.component';
 import { bookServiceMock } from '../services/book.service.mock';
+import { AuthorsPipe } from '../pipes/authors.pipe';
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
@@ -24,7 +25,7 @@ describe('BookListComponent', () => {
           provide: BookService, useValue: bookServiceMock
         }
       ],
-      declarations: [ BookListComponent, BookCardComponent, BookDetailsComponent ]
+      declarations: [ BookListComponent, BookCardComponent, BookDetailsComponent, AuthorsPipe ]
     })
     .compileComponents();
   }));

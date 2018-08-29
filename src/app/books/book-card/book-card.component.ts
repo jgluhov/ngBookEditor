@@ -8,8 +8,7 @@ import { BookService } from '../services/book.service';
     <div class="book-card" (click)="selected.emit()" [ngClass]="handleActiveClass()">
       <div class="book-card__title">{{book.title}}</div>
       <div class="book-card__description">
-        <span class="description__term">Written by</span>
-        {{ bookService.formatAuthors(book.authors) }}
+        <span class="description__term">Written by</span> {{ book.authors | authors }}
         <span class="description__term"> in </span> {{ book.year }}
       </div>
     </div>

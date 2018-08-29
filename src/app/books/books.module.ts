@@ -8,6 +8,7 @@ import { BooksRoutingModule } from './books-routing.module';
 import { BookService } from './services/book.service';
 import { BookCardComponent } from './book-card/book-card.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { AuthorsPipe } from './pipes/authors.pipe';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
   declarations: [
     BookListComponent,
     BookCardComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    AuthorsPipe
   ]
 })
 export class BooksModule { }

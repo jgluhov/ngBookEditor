@@ -19,6 +19,9 @@
     "paths": {
       "@reducers": [
         "src/app/reducers"
+      ],
+      "@environments/*": [
+        "src/environments/*"
       ]
     }
   }
