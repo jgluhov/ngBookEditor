@@ -3,12 +3,12 @@
 .details {
   display: block;
   position: fixed;
-  width: calc((100% - $card-item-width) - 20px);
+  width: calc((100% - #{$card-item-width}) - 20px);
   padding: 10px;
 
   &__image {
     max-height: 300px;
-    max-width: 300px;
+    max-width: 200px;
 
     float: left;
   }

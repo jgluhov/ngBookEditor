@@ -6,7 +6,7 @@ import { environment } from '@environments/environment';
   selector: 'app-book-details',
   template: `
     <div class="details" *ngIf="book">
-      <img src="{{baseUrl}}{{book.imageUrl}}" class="details__image" />
+      <img src="{{baseUrl}}{{book.imageUrl}}" class="details__image" appImagePreload />
       <ul class="details__list">
         <li><span class="details__term">Title:</span>{{book.title}}</li>
         <li><span class="details__term">Pages:</span>{{book.pageCount}}</li>

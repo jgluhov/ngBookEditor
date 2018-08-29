@@ -9,15 +9,19 @@ import { BookService } from './services/book.service';
 import { BookCardComponent } from './book-card/book-card.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { AuthorsPipe } from './pipes/authors.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     StoreModule.forFeature('books', bookReducer),
     BooksRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
-  providers: [BookService],
+  providers: [
+    BookService
+  ],
   declarations: [
     BookListComponent,
     BookCardComponent,
