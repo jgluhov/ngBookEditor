@@ -11,7 +11,7 @@ export class BookService {
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<BookModel[]> {
-    return this.http.get(`${environment.baseUrl}/assets/books.json`)
+    return this.http.get(`${environment.baseUrl}/books`)
       .pipe(
         map((books: Partial<BookModel[]>) => books
           .map((book: Partial<BookModel>) => {

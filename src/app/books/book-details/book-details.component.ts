@@ -8,8 +8,8 @@ import { environment } from '../../../environments/environment';
     <div class="details" *ngIf="book">
       <img src="{{baseUrl}}{{book.imageUrl}}" class="details__image" />
       <ul class="details__list">
-        <li class="list__item"><span class="details__term">Title:</span>{{book?.title}}</li>
-        <li class="list__item"><span class="details__term">Pages:</span>{{book?.pageCount}}</li>
+        <li><span class="details__term">Title:</span>{{book?.title}}</li>
+        <li><span class="details__term">Pages:</span>{{book?.pageCount}}</li>
       </ul>
     </div>
   `,

@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { createServer, Server } from 'http';
 import * as cors from 'cors';
+import { booksRouter } from './routes';
 
 export class HttpServer {
   public static readonly PORT: number = 3000;
@@ -22,6 +23,7 @@ export class HttpServer {
 
   setup() {
     this.app.use(cors());
+    this.app.use('/books', booksRouter);
     this.app.use('/assets', express.static(__dirname + '/assets'));
   }
 
