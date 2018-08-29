@@ -1,0 +1,30 @@
+@import 'partials/variables';
+
+.details {
+  display: block;
+  position: fixed;
+  width: calc((100% - $card-item-width) - 20px);
+  padding: 10px;
+
+  &__image {
+    max-height: 300px;
+    max-width: 300px;
+
+    float: left;
+  }
+
+  &__list {
+    height: auto;
+
+    float: left;
+    margin-left: 10px;
+
+    list-style-type: none;
+    line-height: 20px;
+  }
+
+  &__term {
+    font-weight: 600;
+    margin-right: 5px;
+  }
+}

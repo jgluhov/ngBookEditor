@@ -9,18 +9,20 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-book-list',
   template: `
-    <div class="book-list__cards">
-      <app-book-card *ngFor="let book of books$ | async; let i=index"
-        [active]="isActive(book)"
-        [book]="book"
-        (selected)="handleSelect(book)">
-      </app-book-card>
-    </div>
-    <div class="book-list__details">
-      <app-book-details [book]="selectedBook$ | async"></app-book-details>
+    <div class="book-list">
+      <div class="book-list__cards">
+        <app-book-card *ngFor="let book of books$ | async; let i=index"
+          [active]="isActive(book)"
+          [book]="book"
+          (selected)="handleSelect(book)">
+        </app-book-card>
+      </div>
+      <div class="book-list__details">
+        <app-book-details [book]="selectedBook$ | async"></app-book-details>
+      </div>
     </div>
   `,
-  styleUrls: ['./book-list.component.css']
+  styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
   books$: Observable<BookModel[]>;

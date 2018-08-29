@@ -1,14 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --book-list-width: 300px;
-}
+@import './partials/reset';
+@import './partials/variables';
 
 body {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  background-color: #eeeeee;
+  background-color: $bg-color;
 }

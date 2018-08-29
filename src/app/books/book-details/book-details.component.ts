@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, ViewChild, AfterViewInit, ViewContainerRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { BookModel } from '../models/book.model';
-import { environment } from '../../../environments/environment';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-book-details',
@@ -14,7 +14,7 @@ import { environment } from '../../../environments/environment';
       </ul>
     </div>
   `,
-  styleUrls: ['./book-details.component.css'],
+  styleUrls: ['./book-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookDetailsComponent {

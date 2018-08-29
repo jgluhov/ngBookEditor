@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { BookModel } from '../models/book.model';
 import { BookService } from '../services/book.service';
 
@@ -13,7 +13,8 @@ import { BookService } from '../services/book.service';
       </div>
     </div>
   `,
-  styleUrls: ['./book-card.component.css']
+  styleUrls: ['./book-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookCardComponent implements OnInit {
   @Input() active: boolean;
