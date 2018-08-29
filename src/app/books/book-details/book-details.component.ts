@@ -1,12 +1,13 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { BookModel } from '../models/book.model';
-import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-book-details',
   template: `
     <div class="details" *ngIf="book">
-      <img src="{{baseUrl}}{{book.imageUrl}}" class="details__image" appImagePreload />
+      <div class="details__image">
+        <app-image [src]="book.imageUrl"></app-image>
+      </div>
       <ul class="details__list">
         <li><span class="details__term">Title:</span>{{book.title}}</li>
         <li><span class="details__term">Pages:</span>{{book.pageCount}}</li>
@@ -19,5 +20,4 @@ import { environment } from '@environments/environment';
 })
 export class BookDetailsComponent {
   @Input() book: BookModel;
-  baseUrl = environment.baseUrl;
 }

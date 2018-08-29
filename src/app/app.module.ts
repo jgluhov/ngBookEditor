@@ -6,7 +6,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, metaReducers } from '@reducers';
 import { AppRoutingModule } from './app-routing.module';
-import { ImagePreloadDirective } from './shared/directives/image-preload.directive';
 
 @NgModule({
   declarations: [

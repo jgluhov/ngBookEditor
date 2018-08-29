@@ -18,7 +18,7 @@ import { Observable } from 'rxjs';
         </app-book-card>
       </div>
       <div class="book-list__details">
-        <app-book-details [book]="selectedBook$ | async"></app-book-details>
+        <app-book-details [book]="selectedBook"></app-book-details>
       </div>
     </div>
   `,
@@ -47,12 +47,16 @@ export class BookListComponent implements OnInit {
     this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
 
     this.selectedBook$.subscribe(
-      (book: BookModel) => this.selectedBook = book
+      (book: BookModel) => {
+        this.selectedBook = book;
+      }
     );
 
-    this.bookService.getBooks()
-      .subscribe((books: BookModel[]) => {
-        this.store.dispatch( new bookActions.AddAll(books) );
-      });
+    this.selectedBook$.subscribe(console.log);
+
+    // this.bookService.getBooks()
+    //   .subscribe((books: BookModel[]) => {
+    //     this.store.dispatch( new bookActions.AddAll(books) );
+    //   });
   }
 }

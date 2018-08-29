@@ -9,6 +9,7 @@ import { BookCardComponent } from '../book-card/book-card.component';
 import { BookDetailsComponent } from '../book-details/book-details.component';
 import { bookServiceMock } from '../services/book.service.mock';
 import { AuthorsPipe } from '../pipes/authors.pipe';
+import { SharedModule } from '../../shared/shared.module';
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
@@ -19,6 +20,7 @@ describe('BookListComponent', () => {
       imports: [
         HttpClientModule,
         StoreModule.forRoot(reducers, { metaReducers }),
+        SharedModule
       ],
       providers: [
         {

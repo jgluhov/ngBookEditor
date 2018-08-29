@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ImagePreloadDirective } from './directives/image-preload.directive';
+import { ImageComponent } from './components/image/image.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [ImagePreloadDirective],
-  exports: [ImagePreloadDirective]
+  declarations: [ImageComponent],
+  exports: [ImageComponent]
 })
 export class SharedModule { }
