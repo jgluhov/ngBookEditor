@@ -10,6 +10,7 @@ import { BookDetailsComponent } from '../book-details/book-details.component';
 import { bookServiceMock } from '../services/book.service.mock';
 import { AuthorsPipe } from '../pipes/authors.pipe';
 import { SharedModule } from '../../shared/shared.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
@@ -20,7 +21,8 @@ describe('BookListComponent', () => {
       imports: [
         HttpClientModule,
         StoreModule.forRoot(reducers, { metaReducers }),
-        SharedModule
+        SharedModule,
+        RouterTestingModule
       ],
       providers: [
         {
