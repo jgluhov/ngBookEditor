@@ -22,6 +22,12 @@
       ],
       "@environments/*": [
         "src/environments/*"
+      ],
+      "@books/*": [
+        "src/app/books/*"
+      ],
+      "@root/*": [
+        "src/app/*"
       ]
     }
   }

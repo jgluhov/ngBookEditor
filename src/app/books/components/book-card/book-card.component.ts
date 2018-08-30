@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { BookModel } from '../models/book.model';
-import { BookService } from '../services/book.service';
+import { BookModel } from '@books/models/book.model';
+import { BookService } from '@books/services/book.service';
 
 @Component({
   selector: 'app-book-card',

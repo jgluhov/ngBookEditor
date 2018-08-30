@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { bookReducer } from './book.reducer';
-import { BookListComponent } from './book-list/book-list.component';
+import { BookListPageComponent } from './pages/book-list-page/book-list-page.component';
 import { BooksRoutingModule } from './books-routing.module';
 import { BookService } from './services/book.service';
-import { BookCardComponent } from './book-card/book-card.component';
-import { BookDetailsComponent } from './book-details/book-details.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AuthorsPipe } from './pipes/authors.pipe';
 import { SharedModule } from '../shared/shared.module';
-import { BookFormComponent } from './book-form/book-form.component';
+import { BookFormPageComponent } from './pages/book-form-page/book-form-page.component';
 
 @NgModule({
   imports: [
@@ -24,11 +24,11 @@ import { BookFormComponent } from './book-form/book-form.component';
     BookService
   ],
   declarations: [
-    BookListComponent,
+    BookListPageComponent,
     BookCardComponent,
     BookDetailsComponent,
     AuthorsPipe,
-    BookFormComponent
+    BookFormPageComponent
   ]
 })
 export class BooksModule { }

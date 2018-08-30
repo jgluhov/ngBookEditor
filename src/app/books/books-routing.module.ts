@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookListComponent } from './book-list/book-list.component';
-import { BookFormComponent } from './book-form/book-form.component';
+import { BookListPageComponent } from './pages/book-list-page/book-list-page.component';
+import { BookFormPageComponent } from './pages/book-form-page/book-form-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: BookListComponent
+    component: BookListPageComponent
   },
   {
     path: ':id',
-    component: BookFormComponent
+    component: BookFormPageComponent
   }
 ];
 

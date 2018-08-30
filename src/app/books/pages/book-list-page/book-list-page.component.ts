@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { BookModel } from '../models/book.model';
 import { Store } from '@ngrx/store';
-import * as fromBook from '../book.reducer';
-import * as bookActions from '../book.actions';
-import { BookService } from '../services/book.service';
 import { Observable } from 'rxjs';
+import * as fromBook from '@books/book.reducer';
+import * as bookActions from '@books/book.actions';
+import { BookService } from '@books/services/book.service';
+import { BookModel } from '@books/models/book.model';
 
 @Component({
   selector: 'app-book-list',
@@ -22,9 +22,9 @@ import { Observable } from 'rxjs';
       </div>
     </div>
   `,
-  styleUrls: ['./book-list.component.scss']
+  styleUrls: ['./book-list-page.component.scss']
 })
-export class BookListComponent implements OnInit {
+export class BookListPageComponent implements OnInit {
   books$: Observable<BookModel[]>;
   selectedBook$: Observable<BookModel>;
   selectedBook: BookModel;
