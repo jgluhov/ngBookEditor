@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookFormPageComponent } from './book-form-page.component';
+import { CommonModule, Location } from '@angular/common';
 
 describe('BookFormComponent', () => {
   let component: BookFormPageComponent;
@@ -8,8 +9,16 @@ describe('BookFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        CommonModule
+      ],
       declarations: [
         BookFormPageComponent
+      ],
+      providers: [
+        {
+          provide: Location, useValue: window.location
+        }
       ]
     })
     .compileComponents();
