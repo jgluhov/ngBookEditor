@@ -54,6 +54,8 @@ export class BookListComponent implements OnInit {
 
     this.selectedBook$.subscribe(console.log);
 
+    // TODO: add effects for it
+
     // this.bookService.getBooks()
     //   .subscribe((books: BookModel[]) => {
     //     this.store.dispatch( new bookActions.AddAll(books) );
