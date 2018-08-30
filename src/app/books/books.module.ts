@@ -10,6 +10,7 @@ import { BookCardComponent } from './book-card/book-card.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { AuthorsPipe } from './pipes/authors.pipe';
 import { SharedModule } from '../shared/shared.module';
+import { BookFormComponent } from './book-form/book-form.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { SharedModule } from '../shared/shared.module';
     BookListComponent,
     BookCardComponent,
     BookDetailsComponent,
-    AuthorsPipe
+    AuthorsPipe,
+    BookFormComponent
   ]
 })
 export class BooksModule { }

@@ -27,4 +27,28 @@
     font-weight: 600;
     margin-right: 5px;
   }
+
+  &__actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+  }
 }
+
+.icon {
+  height: 20px;
+  width: 20px;
+  background-size: 20px;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform .1s ease-in;
+  }
+
+  &__edit {
+    background-image: url('/assets/images/edit.png');
+  }
+}
+
+
