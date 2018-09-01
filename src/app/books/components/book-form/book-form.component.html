@@ -1,0 +1,37 @@
+<form [formGroup]="bookForm">
+  <div class="form__group">
+    <label class="form__label">Title:</label>
+    <input type="text" formControlName="title" class="form__control" />
+  </div>
+  <div class="form__group">
+    <label class="form__label">Pages:</label>
+    <input type="text" formControlName="pageCount" class="form__control" />
+  </div>
+  <div class="form__group">
+    <label class="form__label">Publisher:</label>
+    <input type="text" formControlName="publisher" class="form__control" />
+  </div>
+  <div class="form__group">
+    <label class="form__label">Year:</label>
+    <input type="number" formControlName="year" class="form__control" />
+  </div>
+  <div class="form__group">
+    <label class="form__label">Release date:</label>
+    <input type="date" formControlName="releaseDate" class="form__control" />
+  </div>
+
+  <div formArrayName="authors">
+    <div *ngFor="let author of authors.controls; index as i">
+      <div [formGroupName]="i">
+        <div class="form__group">
+          <label class="form__label">First name:</label>
+          <input type="text" formControlName="firstName" class="form__control" />
+        </div>
+        <div class="form__group">
+          <label class="form__label">Last name:</label>
+          <input type="text" formControlName="lastName" class="form__control" />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

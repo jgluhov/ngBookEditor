@@ -6,12 +6,10 @@ import { BookModel } from './models/book.model';
 export const bookAdapter = createEntityAdapter<BookModel>();
 export interface State extends EntityState<BookModel> {
   selectedId: string | null;
-  editingId: string | null;
 }
 
 const defaultBook = {
   selectedId: null,
-  editingId: null,
   ids: [],
   entities: {}
 };
@@ -46,12 +44,6 @@ export const bookReducer = (
         selectedId: action.id,
       };
 
-    case BookActionTypes.EDIT_ONE:
-      return {
-        ...state,
-        editingId: action.id
-      };
-
     default:
       return state;
   }
@@ -62,7 +54,6 @@ export const bookReducer = (
 export const getBooksState = createFeatureSelector<State>('books');
 
 export const selectedId = (state: State) => state.selectedId;
-export const editingId = (state: State) => state.editingId;
 
 export const getBooksEntitiesState = createSelector(
   getBooksState,
@@ -74,22 +65,15 @@ export const getSelectedId = createSelector(
   state => state.selectedId
 );
 
-export const getEditingId = createSelector(
-  getBooksState,
-  state => state.editingId
-);
-
-
 export const getSelectedBook = createSelector(
   getBooksEntitiesState,
   getSelectedId,
   (entities, id) => entities[id] || null
 );
 
-export const getEditingBook = createSelector(
+export const getBookById = (id: string) => createSelector(
   getBooksEntitiesState,
-  getEditingId,
-  (entities, id) => entities[id] || null
+  (entities) => entities[id] || null
 );
 
 export const {

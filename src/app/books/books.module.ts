@@ -14,6 +14,7 @@ import { AuthorsPipe } from './pipes/authors.pipe';
 import { SharedModule } from '../shared/shared.module';
 import { BookFormPageComponent } from './pages/book-form-page/book-form-page.component';
 import { BookEffects } from './book.effects';
+import { BookFormComponent } from './components/book-form/book-form.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { BookEffects } from './book.effects';
     BookCardComponent,
     BookDetailsComponent,
     AuthorsPipe,
-    BookFormPageComponent
+    BookFormPageComponent,
+    BookFormComponent
   ]
 })
 export class BooksModule { }

@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { reducers } from '@reducers';
 import { StoreModule } from '@ngrx/store';
+import { BookFormComponent } from '@books/components/book-form/book-form.component';
 
 describe('BookFormPageComponent', () => {
   let component: BookFormPageComponent;
@@ -27,7 +28,8 @@ describe('BookFormPageComponent', () => {
         StoreModule.forRoot(reducers)
       ],
       declarations: [
-        BookFormPageComponent
+        BookFormPageComponent,
+        BookFormComponent
       ],
       providers: [
         {
