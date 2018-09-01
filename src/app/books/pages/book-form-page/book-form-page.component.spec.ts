@@ -3,16 +3,28 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BookFormPageComponent } from './book-form-page.component';
 import { CommonModule, Location } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+import { reducers } from '@reducers';
+import { StoreModule } from '@ngrx/store';
 
-describe('BookFormComponent', () => {
+describe('BookFormPageComponent', () => {
   let component: BookFormPageComponent;
   let fixture: ComponentFixture<BookFormPageComponent>;
+  let routeMock;
 
   beforeEach(async(() => {
+    routeMock = {
+      paramMap: of({
+        get: () => 'id'
+      })
+    };
+
     TestBed.configureTestingModule({
       imports: [
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        StoreModule.forRoot(reducers)
       ],
       declarations: [
         BookFormPageComponent
@@ -20,6 +32,9 @@ describe('BookFormComponent', () => {
       providers: [
         {
           provide: Location, useValue: window.location
+        },
+        {
+          provide: ActivatedRoute, useValue: routeMock
         }
       ]
     })

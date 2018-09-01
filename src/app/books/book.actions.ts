@@ -6,8 +6,10 @@ export enum BookActionTypes {
   UPDATE_ONE = '[Books] Update one',
   DELETE_ONE = '[Books] Delete one',
   ADD_ALL = '[Books] Add all',
-  ACTIVATE_ONE = '[Books] Activate one',
-  GET_ALL = '[Books] Get all'
+  SELECT_ONE = '[Books] Select one',
+  EDIT_ONE = '[Books] Edit one',
+  GET_ALL = '[Books] Get all',
+  BOOKS_ERROR = '[Books] Books error'
 }
 
 export class AddOne implements Action {
@@ -40,8 +42,14 @@ export class AddAll implements Action {
   constructor(public books: BookModel[]) {}
 }
 
-export class ActivateOne implements Action {
-  readonly type = BookActionTypes.ACTIVATE_ONE;
+export class SelectOne implements Action {
+  readonly type = BookActionTypes.SELECT_ONE;
+
+  constructor(public id: string) {}
+}
+
+export class EditOne implements Action {
+  readonly type = BookActionTypes.EDIT_ONE;
 
   constructor(public id: string) {}
 }
@@ -50,10 +58,16 @@ export class GetAll implements Action {
   readonly type = BookActionTypes.GET_ALL;
 }
 
+export class BooksError implements Action {
+  readonly type = BookActionTypes.BOOKS_ERROR;
+}
+
 export type BookActions =
   AddOne |
   UpdateOne |
   DeleteOne |
   AddAll |
-  ActivateOne |
-  GetAll;
+  SelectOne |
+  EditOne |
+  GetAll |
+  BooksError ;

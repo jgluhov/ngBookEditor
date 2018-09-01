@@ -8,10 +8,6 @@ import { BookService } from './services/book.service';
 import { BookModel } from '@books/models/book.model';
 import * as bookActions from '@books/book.actions';
 
-export class EffectError implements Action {
-  readonly type = '[Error] Effect Error';
-}
-
 @Injectable()
 export class BookEffects {
   @Effect()
@@ -19,7 +15,7 @@ export class BookEffects {
     ofType(BookActionTypes.GET_ALL),
     switchMap(() => this.bookService.getBooks()),
     map((books: BookModel[]) => new bookActions.AddAll(books)),
-    catchError(() => of(new EffectError()))
+    catchError(() => of(new bookActions.BooksError()))
   );
 
   constructor(private bookService: BookService, private actions$: Actions) {}

@@ -27,6 +27,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   &__label {
@@ -34,7 +35,7 @@
   }
 
   &__control {
-    height: 40px;
+    padding: 10px;
     border-radius: 3px;
     background-clip: padding-box;
     border: 1px solid #ced4da;
