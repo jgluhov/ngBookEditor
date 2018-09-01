@@ -60,5 +60,7 @@ export class BookListPageComponent implements OnInit {
     //   .subscribe((books: BookModel[]) => {
     //     this.store.dispatch( new bookActions.AddAll(books) );
     //   });
+
+    this.store.dispatch( new bookActions.GetAll() );
   }
 }

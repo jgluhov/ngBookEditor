@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers, metaReducers } from '@reducers';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

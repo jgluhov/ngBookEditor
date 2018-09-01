@@ -175,6 +175,10 @@
   dependencies:
     tslib "^1.9.0"
 
+"@ngrx/effects@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-6.1.0.tgz#3c1e1ab1e5a86c6d9c29d4f3771e42cc9bd8576c"
+
 "@ngrx/entity@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-6.1.0.tgz#9ea34beef25e458b45638095875b2548d484df9f"
@@ -213,6 +217,10 @@
     rxjs "^6.0.0"
     semver "^5.3.0"
     semver-intersect "^1.1.2"
+
+"@types/@ngrx/effects":
+  version "2.0.5"
+  resolved "https://codeload.github.com/ngrx/effects/tar.gz/90752b5f4d89194275d40ff12bd9c5c887c58682"
 
 "@types/body-parser@*":
   version "1.17.0"

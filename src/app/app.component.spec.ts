@@ -4,6 +4,7 @@ import { BooksModule } from './books/books.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers/index';
 import { RouterTestingModule } from '@angular/router/testing';
+import { EffectsModule } from '@ngrx/effects';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
       imports: [
         StoreModule.forRoot(reducers),
         BooksModule,
-        RouterTestingModule
+        RouterTestingModule,
+        EffectsModule.forRoot([])
       ],
       declarations: [
         AppComponent

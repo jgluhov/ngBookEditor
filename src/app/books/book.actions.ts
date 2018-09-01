@@ -6,7 +6,8 @@ export enum BookActionTypes {
   UPDATE_ONE = '[Books] Update one',
   DELETE_ONE = '[Books] Delete one',
   ADD_ALL = '[Books] Add all',
-  SELECT_ONE = '[Books] Select one'
+  SELECT_ONE = '[Books] Select one',
+  GET_ALL = '[Books] Get all'
 }
 
 export class AddOne implements Action {
@@ -45,4 +46,14 @@ export class SelectOne implements Action {
   constructor(public id: string) {}
 }
 
-export type BookActions = AddOne | UpdateOne | DeleteOne | AddAll | SelectOne;
+export class GetAll implements Action {
+  readonly type = BookActionTypes.GET_ALL;
+}
+
+export type BookActions =
+  AddOne |
+  UpdateOne |
+  DeleteOne |
+  AddAll |
+  SelectOne |
+  GetAll;
