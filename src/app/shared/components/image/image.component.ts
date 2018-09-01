@@ -15,6 +15,6 @@ export class ImageComponent {
   }
 
   handleError() {
-    this.imageUrl = `${environment.baseUrl}${environment.placeholderUrl}`;
+    this.imageUrl = `${environment.placeholderUrl}`;
   }
 }

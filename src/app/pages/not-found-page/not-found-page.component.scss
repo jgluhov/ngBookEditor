@@ -1,0 +1,8 @@
+@import 'mixins/size';
+
+.not-found-container {
+  @include size(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

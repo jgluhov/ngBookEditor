@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundPageComponent } from '@root/pages/not-found-page/not-found-page.component';
 
 export const routes: Routes = [
   {
@@ -10,6 +11,10 @@ export const routes: Routes = [
   {
     path: 'books',
     loadChildren: './books/books.module#BooksModule'
+  },
+  {
+    path: '**',
+    component: NotFoundPageComponent
   }
 ];
 
