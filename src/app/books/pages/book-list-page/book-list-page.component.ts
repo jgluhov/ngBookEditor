@@ -18,7 +18,7 @@ import { BookModel } from '@books/models/book.model';
         </app-book-card>
       </div>
       <div class="book-list__details">
-        <app-book-details [book]="selectedBook"></app-book-details>
+        <app-book-details [book]="activeBook"></app-book-details>
       </div>
     </div>
   `,
@@ -26,8 +26,8 @@ import { BookModel } from '@books/models/book.model';
 })
 export class BookListPageComponent implements OnInit {
   books$: Observable<BookModel[]>;
-  selectedBook$: Observable<BookModel>;
-  selectedBook: BookModel;
+  activeBook$: Observable<BookModel>;
+  activeBook: BookModel;
 
   constructor(
     private bookService: BookService,
@@ -35,24 +35,24 @@ export class BookListPageComponent implements OnInit {
   ) { }
 
   handleSelect(book: BookModel) {
-    this.store.dispatch( new bookActions.SelectOne(book.id) );
+    this.store.dispatch( new bookActions.ActivateOne(book.id) );
   }
 
   isActive(book: BookModel) {
-    return this.selectedBook === book;
+    return this.activeBook === book;
   }
 
   ngOnInit() {
     this.books$ = this.store.select(fromBook.selectAll);
-    this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
+    this.activeBook$ = this.store.select(fromBook.getActiveBook);
 
-    this.selectedBook$.subscribe(
+    this.activeBook$.subscribe(
       (book: BookModel) => {
-        this.selectedBook = book;
+        this.activeBook = book;
       }
     );
 
-    this.selectedBook$.subscribe(console.log);
+    this.activeBook$.subscribe(console.log);
 
     // TODO: add effects for it
 

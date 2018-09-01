@@ -5,11 +5,11 @@ import { BookModel } from './models/book.model';
 
 export const bookAdapter = createEntityAdapter<BookModel>();
 export interface State extends EntityState<BookModel> {
-  selectedId: string | null;
+  activeId: string | null;
 }
 
 const defaultBook = {
-  selectedId: null,
+  activeId: null,
   ids: [],
   entities: {}
 };
@@ -38,10 +38,10 @@ export const bookReducer = (
     case BookActionTypes.ADD_ALL:
       return bookAdapter.addAll(action.books, state);
 
-    case BookActionTypes.SELECT_ONE:
+    case BookActionTypes.ACTIVATE_ONE:
       return {
         ...state,
-        selectedId: action.id,
+        activeId: action.id,
       };
 
     default:
@@ -53,23 +53,24 @@ export const bookReducer = (
 // Selectors
 export const getBooksState = createFeatureSelector<State>('books');
 
-export const selectedId = (state: State) => state.selectedId;
+export const selectedId = (state: State) => state.activeId;
 
 export const getBooksEntitiesState = createSelector(
   getBooksState,
   state => state.entities
 );
 
-export const getSelectedId = createSelector(
+export const getActivedId = createSelector(
   getBooksState,
-  state => state.selectedId
+  state => state.activeId
 );
 
-export const getSelectedBook = createSelector(
+export const getActiveBook = createSelector(
   getBooksEntitiesState,
-  getSelectedId,
+  getActivedId,
   (entities, id) => entities[id] || null
 );
+
 
 export const {
   selectIds,

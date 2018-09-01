@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
+import { Subscription, Observable } from 'rxjs';
+import * as fromBook from '@books/book.reducer';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-book-form',
@@ -24,13 +29,24 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./book-form-page.component.scss']
 })
 export class BookFormPageComponent implements OnInit {
+  sub: Subscription;
+  selectedBook$: Observable<string>;
   bookForm = this.fb.group({
     title: ['']
   });
 
-  constructor(private fb: FormBuilder, private location: Location) { }
+  constructor(
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private location: Location,
+    private store: Store<fromBook.State>
+  ) { }
 
   ngOnInit() {
+    this.selectedBook$ = this.route.paramMap.pipe(
+      map((params: ParamMap) => params.get('id')),
+      switchMap((id: string) => this.store.select())
+    );
   }
 
   goBack() {
