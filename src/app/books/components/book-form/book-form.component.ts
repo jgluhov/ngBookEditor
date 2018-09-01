@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BookModel } from '@books/models/book.model';
 import { FormArray, FormBuilder } from '@angular/forms';
 
 @Component({

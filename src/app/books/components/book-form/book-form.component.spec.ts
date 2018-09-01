@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BookFormComponent } from './book-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookModel } from '../../models/book.model';
+import { SharedModule } from '../../../shared/shared.module';
 
 describe('BookFormComponent', () => {
   let component: BookFormComponent;
@@ -10,7 +11,7 @@ describe('BookFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
+      imports: [ReactiveFormsModule, SharedModule],
       declarations: [ BookFormComponent ]
     })
     .compileComponents();

@@ -1,36 +1,15 @@
 <form [formGroup]="bookForm">
-  <div class="form__group">
-    <label class="form__label">Title:</label>
-    <input type="text" formControlName="title" class="form__control" />
-  </div>
-  <div class="form__group">
-    <label class="form__label">Pages:</label>
-    <input type="text" formControlName="pageCount" class="form__control" />
-  </div>
-  <div class="form__group">
-    <label class="form__label">Publisher:</label>
-    <input type="text" formControlName="publisher" class="form__control" />
-  </div>
-  <div class="form__group">
-    <label class="form__label">Year:</label>
-    <input type="number" formControlName="year" class="form__control" />
-  </div>
-  <div class="form__group">
-    <label class="form__label">Release date:</label>
-    <input type="date" formControlName="releaseDate" class="form__control" />
-  </div>
+  <app-input type="text" label="Title" [controlGroup]="bookForm" controlName="title"></app-input>
+  <app-input type="text" label="Pages" [controlGroup]="bookForm" controlName="pageCount"></app-input>
+  <app-input type="text" label="Publisher" [controlGroup]="bookForm" controlName="publisher"></app-input>
+  <app-input type="number" label="Year" [controlGroup]="bookForm" controlName="year"></app-input>
+  <app-input type="date" label="Release date" [controlGroup]="bookForm" controlName="releaseDate"></app-input>
 
   <div formArrayName="authors">
-    <div *ngFor="let author of authors.controls; index as i">
-      <div [formGroupName]="i">
-        <div class="form__group">
-          <label class="form__label">First name:</label>
-          <input type="text" formControlName="firstName" class="form__control" />
-        </div>
-        <div class="form__group">
-          <label class="form__label">Last name:</label>
-          <input type="text" formControlName="lastName" class="form__control" />
-        </div>
+    <div *ngFor="let authorForm of authors.controls">
+      <div [formGroup]="authorForm">
+        <app-input type="text" label="First name" [controlGroup]="authorForm" controlName="firstName"></app-input>
+        <app-input type="text" label="Last name" [controlGroup]="authorForm" controlName="lastName"></app-input>
       </div>
     </div>
   </div>

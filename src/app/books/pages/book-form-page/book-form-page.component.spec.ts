@@ -8,6 +8,7 @@ import { of } from 'rxjs';
 import { reducers } from '@reducers';
 import { StoreModule } from '@ngrx/store';
 import { BookFormComponent } from '@books/components/book-form/book-form.component';
+import { SharedModule } from '../../../shared/shared.module';
 
 describe('BookFormPageComponent', () => {
   let component: BookFormPageComponent;
@@ -25,7 +26,8 @@ describe('BookFormPageComponent', () => {
       imports: [
         CommonModule,
         ReactiveFormsModule,
-        StoreModule.forRoot(reducers)
+        StoreModule.forRoot(reducers),
+        SharedModule
       ],
       declarations: [
         BookFormPageComponent,
