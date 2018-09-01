@@ -1,0 +1,6 @@
+@mixin margin ($left, $right: $left) {
+  margin: {
+      left: $left;
+      right: $right;
+  }
+}

@@ -4,6 +4,7 @@
 .icon {
   @include size($icon-size);
   background-size: $icon-size;
+  background-repeat: no-repeat;
   cursor: pointer;
 
   &:hover {
