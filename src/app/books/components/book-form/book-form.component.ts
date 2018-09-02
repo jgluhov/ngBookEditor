@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-import { FormArray, FormBuilder } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { BookModel } from '@books/models/book.model';
 
 @Component({
@@ -30,6 +30,10 @@ export class BookFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this.bookForm.valueChanges
+      .subscribe((book: BookModel) => {
+        this.imageUrl = book.imageUrl;
+      });
   }
 
   createAuthor() {
@@ -41,6 +45,11 @@ export class BookFormComponent implements OnInit {
 
   get authors(): FormArray {
     return this.bookForm.get('authors') as FormArray;
+  }
+
+  handleSubmit(bookForm: FormGroup): void {
+    const book: BookModel = bookForm.value;
+    console.log(book);
   }
 
 }
