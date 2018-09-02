@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { FormArray, FormBuilder } from '@angular/forms';
+import { BookModel } from '@books/models/book.model';
 
 @Component({
   selector: 'app-book-form',
@@ -7,9 +8,12 @@ import { FormArray, FormBuilder } from '@angular/forms';
   styleUrls: ['./book-form.component.scss']
 })
 export class BookFormComponent implements OnInit {
-  @Input() set book(value) {
-    if (value) {
-      this.bookForm.patchValue(value);
+  selectedBook: BookModel;
+  imageUrl = '';
+  @Input() set book(book: BookModel) {
+    if (book) {
+      this.bookForm.patchValue(book);
+      this.imageUrl = book.imageUrl;
     }
   }
 
@@ -17,12 +21,13 @@ export class BookFormComponent implements OnInit {
     title: [''],
     authors: this.fb.array([ this.createAuthor() ]),
     pageCount: [''],
+    imageUrl: [null],
     publisher: [''],
     year: [''],
     releaseDate: ['']
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
   }

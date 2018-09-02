@@ -1,3 +1,14 @@
+.form__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.form__label {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
 .form__control {
   padding: 10px;
   border-radius: 3px;

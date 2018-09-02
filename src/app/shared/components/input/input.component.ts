@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-input',
   template: `
-    <div [formGroup]="controlGroup">
+    <div [formGroup]="controlGroup" class="form__group">
       <label class="form__label">{{label}}</label>
       <input [type]="type" formControlName="{{controlName}}" class="form__control" />
     </div>

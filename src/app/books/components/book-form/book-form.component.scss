@@ -1,44 +1,6 @@
-// .form {
-//   &__group {
-//     display: flex;
-//     justify-content: flex-start;
-//     align-items: center;
-//     margin-bottom: 10px;
-//     flex: 1 1 100%;
+@import 'mixins/size';
 
-//     &.row {
-//       .form__label {
-//         justify-content: flex-start;
-//         flex: 1 1 16%;
-//         max-width: 16%;
-//       }
-
-//       .form__control {
-//         flex: 1 1 84%;
-//         max-width: 84%;
-//       }
-//     }
-
-//     &.column {
-//       .column__group {
-//         justify-content: flex-start;
-//         flex-direction: column;
-//         flex: 0 0 50%;
-//         max-width: 50%;
-//         align-items: flex-start;
-//         margin-right: 10px;
-//       }
-
-//       .form__control {
-//         flex: 1 1 100%;
-//         width: 100%;
-//       }
-//     }
-//   }
-
-//   &__label {
-//     padding: 5px 10px;
-//   }
-
-
-
+.form__image {
+  display: flex;
+  justify-content: space-around;
+}
