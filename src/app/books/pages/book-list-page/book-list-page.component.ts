@@ -10,6 +10,9 @@ import { BookModel } from '@books/models/book.model';
   selector: 'app-book-list',
   template: `
     <div class="book-list">
+      <div class="book-list__dashboard">
+        <app-book-dashboard></app-book-dashboard>
+      </div>
       <div class="book-list__cards">
         <app-book-card *ngFor="let book of books$ | async; let i=index"
           [active]="isActive(book)"
@@ -51,13 +54,6 @@ export class BookListPageComponent implements OnInit {
         this.selectedBook = book;
       }
     );
-
-    // TODO: add effects for it
-
-    // this.bookService.getBooks()
-    //   .subscribe((books: BookModel[]) => {
-    //     this.store.dispatch( new bookActions.AddAll(books) );
-    //   });
 
     // this.store.dispatch( new bookActions.GetAll() );
   }

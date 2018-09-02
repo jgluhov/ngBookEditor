@@ -6,10 +6,12 @@ import { BookModel } from './models/book.model';
 export const bookAdapter = createEntityAdapter<BookModel>();
 export interface State extends EntityState<BookModel> {
   selectedId: string | null;
+  searchTerm: string;
 }
 
 const defaultBook = {
   selectedId: null,
+  searchTerm: '',
   ids: [],
   entities: {}
 };
@@ -44,6 +46,12 @@ export const bookReducer = (
         selectedId: action.id,
       };
 
+    case BookActionTypes.SEARCH_BOOK:
+      return {
+        ...state,
+        searchTerm: action.searchTerm
+      };
+
     default:
       return state;
   }
@@ -54,6 +62,7 @@ export const bookReducer = (
 export const getBooksState = createFeatureSelector<State>('books');
 
 export const selectedId = (state: State) => state.selectedId;
+export const searchTerm = (state: State) => state.searchTerm;
 
 export const getBooksEntitiesState = createSelector(
   getBooksState,

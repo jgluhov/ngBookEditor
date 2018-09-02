@@ -8,6 +8,7 @@ export enum BookActionTypes {
   ADD_ALL = '[Books] Add all',
   SELECT_ONE = '[Books] Select one',
   GET_ALL = '[Books] Get all',
+  SEARCH_BOOK = '[Books] Search book',
   BOOKS_ERROR = '[Books] Books error'
 }
 
@@ -55,6 +56,12 @@ export class BooksError implements Action {
   readonly type = BookActionTypes.BOOKS_ERROR;
 }
 
+export class SearchBook implements Action {
+  readonly type = BookActionTypes.SEARCH_BOOK;
+
+  constructor(public searchTerm: string) {}
+}
+
 export type BookActions =
   AddOne |
   UpdateOne |
@@ -62,4 +69,5 @@ export type BookActions =
   AddAll |
   SelectOne |
   GetAll |
-  BooksError ;
+  SearchBook |
+  BooksError;

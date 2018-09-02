@@ -1,4 +1,24 @@
 .book-list {
   display: grid;
   grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "dashboard dashboard"
+    "cards details";
+  height: 100%;
+
+  &__dashboard {
+    grid-area: dashboard;
+    background-color: white;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  &__cards {
+    grid-area: cards;
+    border-right: 1px solid #dee2e6;
+  }
+
+  &__details {
+    grid-area: details;
+  }
 }

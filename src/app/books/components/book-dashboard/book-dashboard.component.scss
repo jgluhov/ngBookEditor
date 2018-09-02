@@ -1,0 +1,10 @@
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+
+  &__serach {
+    max-width: 400px;
+  }
+}
+
+

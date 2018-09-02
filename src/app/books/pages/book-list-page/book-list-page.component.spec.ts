@@ -10,8 +10,10 @@ import { bookServiceMock } from '@books/services/book.service.mock';
 import { AuthorsPipe } from '@books/pipes/authors.pipe';
 import { SharedModule } from '@root/shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
+import { BookDashboardComponent } from '@books/components/book-dashboard/book-dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
-describe('BookListComponent', () => {
+describe('BookListPageComponent', () => {
   let component: BookListPageComponent;
   let fixture: ComponentFixture<BookListPageComponent>;
 
@@ -21,7 +23,8 @@ describe('BookListComponent', () => {
         HttpClientModule,
         StoreModule.forRoot(reducers, { metaReducers }),
         SharedModule,
-        RouterTestingModule
+        RouterTestingModule,
+        ReactiveFormsModule
       ],
       providers: [
         {
@@ -32,6 +35,7 @@ describe('BookListComponent', () => {
         BookListPageComponent,
         BookCardComponent,
         BookDetailsComponent,
+        BookDashboardComponent,
         AuthorsPipe
       ]
     })

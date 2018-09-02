@@ -15,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
 import { BookFormPageComponent } from './pages/book-form-page/book-form-page.component';
 import { BookEffects } from './book.effects';
 import { BookFormComponent } from './components/book-form/book-form.component';
+import { BookDashboardComponent } from './components/book-dashboard/book-dashboard.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { BookFormComponent } from './components/book-form/book-form.component';
     BookDetailsComponent,
     AuthorsPipe,
     BookFormPageComponent,
-    BookFormComponent
+    BookFormComponent,
+    BookDashboardComponent
   ]
 })
 export class BooksModule { }
