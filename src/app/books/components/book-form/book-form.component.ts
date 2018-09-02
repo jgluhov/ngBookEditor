@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { BookModel } from '@books/models/book.model';
 
@@ -10,6 +10,7 @@ import { BookModel } from '@books/models/book.model';
 export class BookFormComponent implements OnInit {
   selectedBook: BookModel;
   imageUrl = '';
+  @Output() submitted = new EventEmitter<BookModel>();
   @Input() set book(book: BookModel) {
     if (book) {
       this.bookForm.patchValue(book);
@@ -18,6 +19,7 @@ export class BookFormComponent implements OnInit {
   }
 
   bookForm = this.fb.group({
+    id: [''],
     title: [''],
     authors: this.fb.array([ this.createAuthor() ]),
     pageCount: [''],
@@ -49,7 +51,7 @@ export class BookFormComponent implements OnInit {
 
   handleSubmit(bookForm: FormGroup): void {
     const book: BookModel = bookForm.value;
-    console.log(book);
+    this.submitted.emit(book);
   }
 
 }

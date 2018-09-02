@@ -7,6 +7,7 @@ import * as fromBook from '@books/book.reducer';
 import { Store, State } from '@ngrx/store';
 import { BookModel } from '@books/models/book.model';
 import { getBookById } from '@books/book.reducer';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-book-form-page',
@@ -16,7 +17,7 @@ import { getBookById } from '@books/book.reducer';
         <a class="icon icon__back" (click)="goBack()"></a>
       </div>
       <div class="form-page__content">
-        <app-book-form [book]="book$ | async"></app-book-form>
+        <app-book-form [book]="book$ | async" (submitted)="handleSubmit($event)"></app-book-form>
       </div>
     </div>
   `,
@@ -27,7 +28,7 @@ export class BookFormPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-
+    private bookService: BookService,
     private location: Location,
     private store: Store<fromBook.State>
   ) { }
@@ -42,5 +43,10 @@ export class BookFormPageComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  handleSubmit(book: BookModel) {
+    this.bookService.updateBook(book);
+    this.goBack();
   }
 }

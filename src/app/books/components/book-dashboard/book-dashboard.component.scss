@@ -1,6 +1,10 @@
 .dashboard {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 1;
 
   &__serach {
     width: 300px;

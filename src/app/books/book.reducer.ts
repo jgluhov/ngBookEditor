@@ -98,6 +98,6 @@ export const getFilteredBooks = createSelector(
   selectAll,
   getSearchTerm,
   (books, searchTerm) => {
-    return books.filter((book: BookModel) => book.title.includes(searchTerm));
+    return books.filter((book: BookModel) => book.title.toLowerCase().includes(searchTerm.toLowerCase()));
   }
 );

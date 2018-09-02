@@ -2,8 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookFormComponent } from './book-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BookModel } from '../../models/book.model';
-import { SharedModule } from '../../../shared/shared.module';
+import { BookModel } from '@books/models/book.model';
+import { SharedModule } from '@root/shared/shared.module';
+import { bookServiceMock } from '@books/services/book.service.mock';
+import { BookService } from '@books/services/book.service';
 
 describe('BookFormComponent', () => {
   let component: BookFormComponent;
@@ -12,7 +14,12 @@ describe('BookFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, SharedModule],
-      declarations: [ BookFormComponent ]
+      declarations: [ BookFormComponent ],
+      providers: [
+        {
+          provide: BookService, useValue: bookServiceMock
+        }
+      ]
     })
     .compileComponents();
   }));

@@ -8,7 +8,9 @@ import { of } from 'rxjs';
 import { reducers } from '@reducers';
 import { StoreModule } from '@ngrx/store';
 import { BookFormComponent } from '@books/components/book-form/book-form.component';
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedModule } from '@root/shared/shared.module';
+import { BookService } from '@books/services/book.service';
+import { bookServiceMock } from '@books/services/book.service.mock';
 
 describe('BookFormPageComponent', () => {
   let component: BookFormPageComponent;
@@ -39,6 +41,9 @@ describe('BookFormPageComponent', () => {
         },
         {
           provide: ActivatedRoute, useValue: routeMock
+        },
+        {
+          provide: BookService, useValue: bookServiceMock
         }
       ]
     })

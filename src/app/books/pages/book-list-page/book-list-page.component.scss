@@ -1,7 +1,7 @@
 .book-list {
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 55px 1fr;
   grid-template-areas:
     "dashboard dashboard"
     "cards details";

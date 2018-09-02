@@ -4,6 +4,10 @@
 @import './partials/icons';
 @import './partials/grid';
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
 }
