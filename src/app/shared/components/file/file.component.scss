@@ -1,7 +1,16 @@
+@import 'mixins/truncate';
+
 .file__container {
   padding: 10px 15px;
   background-color: white;
   border: 1px solid #ced4da;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  flex: 1;
 }
 
 .file__input {

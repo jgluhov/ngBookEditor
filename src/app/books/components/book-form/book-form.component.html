@@ -1,7 +1,6 @@
 <form [formGroup]="bookForm" novalidate class="form" (ngSubmit)="handleSubmit(bookForm)">
   <div class="form__image">
     <app-image [src]="imageUrl"></app-image>
-    <app-file [controlGroup]="bookForm" controlName="imageUrl"></app-file>
   </div>
   <app-input type="text" label="Title" [controlGroup]="bookForm" controlName="title" class="row"></app-input>
   <div formArrayName="authors">
@@ -16,5 +15,6 @@
   <app-input type="text" label="Publisher" [controlGroup]="bookForm" controlName="publisher"></app-input>
   <app-input type="number" label="Year" [controlGroup]="bookForm" controlName="year"></app-input>
   <app-input type="date" label="Release date" [controlGroup]="bookForm" controlName="releaseDate"></app-input>
+  <app-file [controlGroup]="bookForm" controlName="imageUrl"></app-file>
   <app-button type="submit" class="form__submit">Submit</app-button>
 </form>
