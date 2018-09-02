@@ -46,7 +46,7 @@ export class BookListPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.books$ = this.store.select(fromBook.selectAll);
+    this.books$ = this.store.select(fromBook.getFilteredBooks);
     this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
 
     this.selectedBook$.subscribe(
@@ -55,6 +55,6 @@ export class BookListPageComponent implements OnInit {
       }
     );
 
-    // this.store.dispatch( new bookActions.GetAll() );
+    this.store.dispatch( new bookActions.GetAll() );
   }
 }

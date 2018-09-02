@@ -27,8 +27,8 @@ export class BookDashboardComponent implements OnInit {
   constructor(private fb: FormBuilder, private store: Store<fromBook.State>) { }
 
   ngOnInit() {
-    this.dashboardForm.valueChanges.subscribe(searchTerm => {
-      this.store.dispatch( new bookActions.SearchBook(searchTerm) );
+    this.dashboardForm.valueChanges.subscribe(value => {
+      this.store.dispatch( new bookActions.SearchBook(value.searchTerm) );
     });
   }
 
