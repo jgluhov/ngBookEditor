@@ -18,7 +18,7 @@ export class BookService {
       this.store.select(fromBook.selectAll),
       this.store.select(fromBook.getSearchTerm), (books, searchTerm) => {
         return books.filter((book: BookModel) => this.isSuitable(book, searchTerm));
-        });
+      });
   }
 
   getBooks(): Observable<BookModel[]> {
