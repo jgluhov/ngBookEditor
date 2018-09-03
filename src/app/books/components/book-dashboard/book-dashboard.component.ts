@@ -15,6 +15,7 @@ import * as bookActions from '@books/book.actions';
         placeholder="Search book"
         class="dashboard__serach">
       </app-input>
+      <app-button type="button">+</app-button>
     </form>
   `,
   styleUrls: ['./book-dashboard.component.scss']
