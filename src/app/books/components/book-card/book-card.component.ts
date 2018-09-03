@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { BookModel } from '@books/models/book.model';
-import { BookService } from '@books/services/book.service';
 
 @Component({
   selector: 'app-book-card',
@@ -16,14 +15,10 @@ import { BookService } from '@books/services/book.service';
   styleUrls: ['./book-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BookCardComponent implements OnInit {
+export class BookCardComponent {
   @Input() active: boolean;
   @Input() book: BookModel;
   @Output() selected = new EventEmitter<void>();
-  constructor(public bookService: BookService) { }
-
-  ngOnInit() {
-  }
 
   handleActiveClass() {
     if (this.active) {

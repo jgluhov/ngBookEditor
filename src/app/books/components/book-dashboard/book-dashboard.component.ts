@@ -13,7 +13,8 @@ import { BookService } from '@books/services/book.service';
         placeholder="Search book"
         class="dashboard__serach">
       </app-input>
-      <app-button type="button">+</app-button>
+      <a class="icon icon__download" (click)="handleDownload()"></a>
+      <app-button type="button" [routerLink]="['/books/create']">+</app-button>
     </form>
   `,
   styleUrls: ['./book-dashboard.component.scss']
@@ -32,5 +33,9 @@ export class BookDashboardComponent implements OnInit {
     this.dashboardForm.valueChanges.subscribe(value => {
       this.bookService.searchBook(value.searchTerm);
     });
+  }
+
+  handleDownload() {
+    this.bookService.loadBooks();
   }
 }

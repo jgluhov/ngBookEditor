@@ -1,13 +1,13 @@
-import { UUID } from 'angular2-uuid';
+import { BaseModel } from './base.model';
 import { Deserializable } from './deserialize.model';
 
-export class AuthorModel implements Deserializable {
-  id = UUID.UUID();
-
+export class AuthorModel extends BaseModel implements Deserializable {
   constructor(
     public firstName: string = '',
     public lastName: string = ''
-  ) {}
+  ) {
+    super();
+  }
 
   deserialize(input: object): this {
     Object.assign(this, input);

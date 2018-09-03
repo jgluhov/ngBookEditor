@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BookFormPageComponent } from './book-form-page.component';
 import { CommonModule, Location } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,18 +9,26 @@ import { StoreModule } from '@ngrx/store';
 import { BookFormComponent } from '@books/components/book-form/book-form.component';
 import { SharedModule } from '@root/shared/shared.module';
 import { BookService } from '@books/services/book.service';
-import { bookServiceMock } from '@books/services/book.service.mock';
+import { BookModel } from '@books/models/book.model';
 
 describe('BookFormPageComponent', () => {
   let component: BookFormPageComponent;
   let fixture: ComponentFixture<BookFormPageComponent>;
   let routeMock;
+  let bookServiceMock;
 
   beforeEach(async(() => {
     routeMock = {
-      paramMap: of({
-        get: () => 'id'
-      })
+      snapshot: {
+        params: {
+          id: 'id'
+        }
+      }
+    };
+
+    bookServiceMock = {
+      getBookById: () => of(new BookModel()),
+      updateBook: () => {}
     };
 
     TestBed.configureTestingModule({

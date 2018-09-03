@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import {Observable } from 'rxjs';
-import * as fromBook from '@books/book.reducer';
-import { Store, State } from '@ngrx/store';
+import { switchMap, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { BookModel } from '@books/models/book.model';
-import { getBookById } from '@books/book.reducer';
-import { BookService } from '../../services/book.service';
+import { BookService } from '@books/services/book.service';
 
 @Component({
   selector: 'app-book-form-page',
@@ -17,28 +14,28 @@ import { BookService } from '../../services/book.service';
         <a class="icon icon__back" (click)="goBack()"></a>
       </div>
       <div class="form-page__content">
-        <app-book-form [book]="book$ | async" (submitted)="handleSubmit($event)"></app-book-form>
+        <app-book-form [book]="book$ | async" (submitted)="handleSubmit($event)">
+        </app-book-form>
       </div>
     </div>
   `,
   styleUrls: ['./book-form-page.component.scss']
 })
 export class BookFormPageComponent implements OnInit {
+  id: string;
   book$: Observable<BookModel>;
 
   constructor(
     private route: ActivatedRoute,
     private bookService: BookService,
-    private location: Location,
-    private store: Store<fromBook.State>
+    private location: Location
   ) { }
 
   ngOnInit() {
-    this.book$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => {
-        return this.store.select(fromBook.getBookById(params.get('id')));
-      })
-    );
+    this.id = this.route.snapshot.params.id;
+    this.book$ = this.bookService
+      .getBookById(this.id)
+      .pipe(map((book: BookModel) => book ? book : new BookModel()));
   }
 
   goBack() {
@@ -46,7 +43,11 @@ export class BookFormPageComponent implements OnInit {
   }
 
   handleSubmit(book: BookModel) {
-    this.bookService.updateBook(book);
-    this.goBack();
+    if (this.id) {
+      this.bookService.updateBook(book);
+      this.goBack();
+    } else {
+      this.bookService.createBook(book);
+    }
   }
 }

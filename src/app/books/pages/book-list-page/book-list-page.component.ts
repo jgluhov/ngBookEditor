@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';;
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BookService } from '@books/services/book.service';
 import { BookModel } from '@books/models/book.model';
@@ -37,6 +37,5 @@ export class BookListPageComponent implements OnInit {
   ngOnInit() {
     this.books$ = this.bookService.books$;
     this.selectedBook$ = this.bookService.selectedBook$;
-    // this.store.dispatch( new bookActions.GetAll() );
   }
 }

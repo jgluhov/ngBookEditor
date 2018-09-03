@@ -10,11 +10,12 @@ import { environment } from '@environments/environment';
 })
 export class ImageComponent {
   imageUrl: string;
+  placeholderUrl = `${environment.placeholderUrl}`;
   @Input() set src(path) {
-    this.imageUrl = path;
+    this.imageUrl = path || this.placeholderUrl;
   }
 
   handleError() {
-    this.imageUrl = `${environment.placeholderUrl}`;
+    this.imageUrl = this.placeholderUrl;
   }
 }

@@ -3,7 +3,7 @@ import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import { Action } from '@ngrx/store';
 import { switchMap, map, catchError } from 'rxjs/operators';
-import { BookActionTypes } from './book.actions';
+import { BookActionTypes, AddAll, AddMany } from './book.actions';
 import { BookService } from './services/book.service';
 import { BookModel } from '@books/models/book.model';
 import * as bookActions from '@books/book.actions';
@@ -14,7 +14,7 @@ export class BookEffects {
   all$: Observable<Action> = this.actions$.pipe(
     ofType(BookActionTypes.GET_ALL),
     switchMap(() => this.bookService.getBooks()),
-    map((books: BookModel[]) => new bookActions.AddAll(books)),
+    map((books: BookModel[]) => new bookActions.AddMany(books)),
     catchError(() => of(new bookActions.BooksError()))
   );
 

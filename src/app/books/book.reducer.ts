@@ -40,6 +40,9 @@ export const bookReducer = (
     case BookActionTypes.ADD_ALL:
       return bookAdapter.addAll(action.books, state);
 
+    case BookActionTypes.ADD_MANY:
+      return bookAdapter.addMany(action.books, state);
+
     case BookActionTypes.SELECT_ONE:
       return {
         ...state,

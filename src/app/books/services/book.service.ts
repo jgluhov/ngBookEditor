@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, combineLatest, empty, of } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { BookModel } from '../models/book.model';
-import { environment } from '@environments/environment';
 import * as fromBook from '@books/book.reducer';
 import { Store } from '@ngrx/store';
 import * as bookActions from '@books/book.actions';
@@ -18,10 +17,8 @@ export class BookService {
     this.books$ = combineLatest(
       this.store.select(fromBook.selectAll),
       this.store.select(fromBook.getSearchTerm), (books, searchTerm) => {
-        return books.filter((book: BookModel) => {
-          return book.title.toLowerCase().includes(searchTerm.toLowerCase());
+        return books.filter((book: BookModel) => this.isSuitable(book, searchTerm));
         });
-    });
   }
 
   getBooks(): Observable<BookModel[]> {
@@ -45,5 +42,25 @@ export class BookService {
 
   searchBook(searchTerm: string) {
     this.store.dispatch( new bookActions.SearchBook(searchTerm) );
+  }
+
+  createBook(book: BookModel) {
+    this.store.dispatch( new bookActions.AddOne(book) );
+  }
+
+  getBookById(id: string): Observable<BookModel> {
+    return this.store.select(fromBook.getBookById(id));
+  }
+
+  loadBooks() {
+    this.store.dispatch( new bookActions.GetAll() );
+  }
+
+  isSuitable(book: BookModel, searchTerm: string) {
+    const title = book.title.toLowerCase();
+    const year = book.year.toString();
+    const term = searchTerm.toLowerCase();
+
+    return title.includes(term) || year.includes(term);
   }
 }
