@@ -14,7 +14,7 @@ import { BookModel } from '@books/models/book.model';
         <app-book-dashboard></app-book-dashboard>
       </div>
       <div class="book-list__cards">
-        <app-book-card *ngFor="let book of books$ | async; let i=index"
+        <app-book-card *ngFor="let book of books$ | async"
           [active]="isActive(book)"
           [book]="book"
           (selected)="handleSelect(book)">
