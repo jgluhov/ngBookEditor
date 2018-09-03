@@ -42,4 +42,8 @@ export class BookService {
   selectBook(book: BookModel) {
     this.store.dispatch( new bookActions.SelectOne(book.id) );
   }
+
+  searchBook(searchTerm: string) {
+    this.store.dispatch( new bookActions.SearchBook(searchTerm) );
+  }
 }

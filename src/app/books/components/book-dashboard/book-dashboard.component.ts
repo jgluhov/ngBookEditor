@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import * as fromBook from '@books/book.reducer';
-import { Store } from '@ngrx/store';
-import * as bookActions from '@books/book.actions';
+import { BookService } from '@books/services/book.service';
 
 @Component({
   selector: 'app-book-dashboard',
@@ -25,12 +23,14 @@ export class BookDashboardComponent implements OnInit {
     searchTerm: ['']
   });
 
-  constructor(private fb: FormBuilder, private store: Store<fromBook.State>) { }
+  constructor(
+    private fb: FormBuilder,
+    private bookService: BookService
+  ) { }
 
   ngOnInit() {
     this.dashboardForm.valueChanges.subscribe(value => {
-      this.store.dispatch( new bookActions.SearchBook(value.searchTerm) );
+      this.bookService.searchBook(value.searchTerm);
     });
   }
-
 }

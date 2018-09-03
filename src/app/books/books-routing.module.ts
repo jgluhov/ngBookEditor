@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: BookFormPageComponent
+  },
+  {
+    path: 'create',
+    component: BookFormPageComponent
   }
 ];
 

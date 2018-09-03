@@ -28,9 +28,7 @@ export class BookListPageComponent implements OnInit {
   books$: Observable<BookModel[]>;
   selectedBook$: Observable<BookModel>;
 
-  constructor(
-    private bookService: BookService
-  ) { }
+  constructor(private bookService: BookService) { }
 
   handleSelect(book: BookModel) {
     this.bookService.selectBook(book);
