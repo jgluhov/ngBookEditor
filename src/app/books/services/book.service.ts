@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { BookModel } from '../models/book.model';
 import { environment } from '@environments/environment';
@@ -15,7 +15,13 @@ export class BookService {
 
   constructor(private http: HttpClient, private store: Store<fromBook.State>) {
     this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
-    this.books$ = this.store.select(fromBook.selectAll);
+    this.books$ = combineLatest(
+      this.store.select(fromBook.selectAll),
+      this.store.select(fromBook.getSearchTerm), (books, searchTerm) => {
+        return books.filter((book: BookModel) => {
+          return book.title.toLowerCase().includes(searchTerm.toLowerCase());
+        });
+    });
   }
 
   getBooks(): Observable<BookModel[]> {

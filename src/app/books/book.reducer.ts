@@ -93,11 +93,3 @@ export const {
   selectAll,
   selectTotal,
 } = bookAdapter.getSelectors(getBooksState);
-
-export const getFilteredBooks = createSelector(
-  selectAll,
-  getSearchTerm,
-  (books, searchTerm) => {
-    return books.filter((book: BookModel) => book.title.toLowerCase().includes(searchTerm.toLowerCase()));
-  }
-);
