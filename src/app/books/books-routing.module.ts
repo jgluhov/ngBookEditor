@@ -9,7 +9,7 @@ const routes: Routes = [
     component: BookListPageComponent
   },
   {
-    path: ':id',
+    path: ':id/edit',
     component: BookFormPageComponent
   },
   {

@@ -14,7 +14,7 @@ import { BookModel } from '@books/models/book.model';
         <li><span class="details__term">Year:</span>{{book.year}}</li>
       </ul>
       <div class="details__actions">
-        <a [routerLink]="['/books/', book.id]" class="icon icon__edit"></a>
+        <a [routerLink]="['/', 'books', book.id, 'edit']" class="icon icon__edit"></a>
       </div>
     </div>
   `,

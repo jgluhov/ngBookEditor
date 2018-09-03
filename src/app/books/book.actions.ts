@@ -10,6 +10,7 @@ export enum BookActionTypes {
   GET_ALL = '[Books] Get all',
   ADD_MANY = '[Books] Add many',
   SEARCH_BOOK = '[Books] Search book',
+  REMOVE_ALL = '[Books] Remove all',
   BOOKS_ERROR = '[Books] Books error'
 }
 
@@ -59,6 +60,10 @@ export class GetAll implements Action {
   readonly type = BookActionTypes.GET_ALL;
 }
 
+export class RemoveAll implements Action {
+  readonly type = BookActionTypes.REMOVE_ALL;
+}
+
 export class BooksError implements Action {
   readonly type = BookActionTypes.BOOKS_ERROR;
 }
@@ -78,4 +83,5 @@ export type BookActions =
   GetAll |
   SearchBook |
   AddMany |
+  RemoveAll |
   BooksError;

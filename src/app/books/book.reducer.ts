@@ -1,4 +1,4 @@
-import { BookActionTypes, BookActions } from './book.actions';
+import { BookActionTypes, BookActions, RemoveAll } from './book.actions';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { BookModel } from './models/book.model';
@@ -36,6 +36,13 @@ export const bookReducer = (
 
     case BookActionTypes.DELETE_ONE:
       return bookAdapter.removeOne(action.id, state);
+
+    case BookActionTypes.REMOVE_ALL:
+      return bookAdapter.removeAll({
+        ...state,
+        selectedId: null,
+        searchTerm: ''
+      });
 
     case BookActionTypes.ADD_ALL:
       return bookAdapter.addAll(action.books, state);

@@ -45,9 +45,10 @@ export class BookFormPageComponent implements OnInit {
   handleSubmit(book: BookModel) {
     if (this.id) {
       this.bookService.updateBook(book);
-      this.goBack();
     } else {
       this.bookService.createBook(book);
     }
+
+    this.goBack();
   }
 }

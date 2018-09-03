@@ -14,6 +14,7 @@ import { BookService } from '@books/services/book.service';
         class="dashboard__serach">
       </app-input>
       <a class="icon icon__download" (click)="handleDownload()"></a>
+      <a class="icon icon__bin" (click)="handleClear()"></a>
       <app-button type="button" [routerLink]="['/books/create']">+</app-button>
     </form>
   `,
@@ -37,5 +38,9 @@ export class BookDashboardComponent implements OnInit {
 
   handleDownload() {
     this.bookService.loadBooks();
+  }
+
+  handleClear() {
+    this.bookService.removeBooks();
   }
 }

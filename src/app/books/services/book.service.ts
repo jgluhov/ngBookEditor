@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, combineLatest, empty, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { Observable, combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { BookModel } from '../models/book.model';
 import * as fromBook from '@books/book.reducer';
 import { Store } from '@ngrx/store';
@@ -54,6 +54,10 @@ export class BookService {
 
   loadBooks() {
     this.store.dispatch( new bookActions.GetAll() );
+  }
+
+  removeBooks() {
+    this.store.dispatch( new bookActions.RemoveAll() );
   }
 
   isSuitable(book: BookModel, searchTerm: string) {
