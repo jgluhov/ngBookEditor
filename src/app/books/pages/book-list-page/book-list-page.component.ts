@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Component, OnInit } from '@angular/core';;
 import { Observable } from 'rxjs';
-import * as fromBook from '@books/book.reducer';
-import * as bookActions from '@books/book.actions';
 import { BookService } from '@books/services/book.service';
 import { BookModel } from '@books/models/book.model';
 
@@ -15,13 +12,13 @@ import { BookModel } from '@books/models/book.model';
       </div>
       <div class="book-list__cards">
         <app-book-card *ngFor="let book of books$ | async"
-          [active]="isActive(book)"
+          [active]="(selectedBook$ | async) === book"
           [book]="book"
           (selected)="handleSelect(book)">
         </app-book-card>
       </div>
       <div class="book-list__details">
-        <app-book-details [book]="selectedBook"></app-book-details>
+        <app-book-details [book]="selectedBook$ | async"></app-book-details>
       </div>
     </div>
   `,
@@ -30,31 +27,18 @@ import { BookModel } from '@books/models/book.model';
 export class BookListPageComponent implements OnInit {
   books$: Observable<BookModel[]>;
   selectedBook$: Observable<BookModel>;
-  selectedBook: BookModel;
 
   constructor(
-    private bookService: BookService,
-    private store: Store<fromBook.State>
+    private bookService: BookService
   ) { }
 
   handleSelect(book: BookModel) {
-    this.store.dispatch( new bookActions.SelectOne(book.id) );
-  }
-
-  isActive(book: BookModel) {
-    return this.selectedBook === book;
+    this.bookService.selectBook(book);
   }
 
   ngOnInit() {
-    this.books$ = this.store.select(fromBook.getFilteredBooks);
-    this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
-
-    this.selectedBook$.subscribe(
-      (book: BookModel) => {
-        this.selectedBook = book;
-      }
-    );
-
+    this.books$ = this.bookService.books$;
+    this.selectedBook$ = this.bookService.selectedBook$;
     // this.store.dispatch( new bookActions.GetAll() );
   }
 }

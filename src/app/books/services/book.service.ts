@@ -10,7 +10,13 @@ import * as bookActions from '@books/book.actions';
 
 @Injectable()
 export class BookService {
-  constructor(private http: HttpClient, private store: Store<fromBook.State>) {}
+  selectedBook$: Observable<BookModel>;
+  books$: Observable<BookModel[]>;
+
+  constructor(private http: HttpClient, private store: Store<fromBook.State>) {
+    this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
+    this.books$ = this.store.select(fromBook.selectAll);
+  }
 
   getBooks(): Observable<BookModel[]> {
     return this.http.get('/assets/books.json')
@@ -24,6 +30,10 @@ export class BookService {
   }
 
   updateBook(book: BookModel) {
-    this.store.dispatch( new bookActions.UpdateOne(book.id, { ... book }) );
+    this.store.dispatch( new bookActions.UpdateOne(book.id, book) );
+  }
+
+  selectBook(book: BookModel) {
+    this.store.dispatch( new bookActions.SelectOne(book.id) );
   }
 }
