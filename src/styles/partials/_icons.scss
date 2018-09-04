@@ -5,6 +5,7 @@
   @include size($icon-size);
   background-size: $icon-size;
   background-repeat: no-repeat;
+  display: inline-block;
   cursor: pointer;
 
   &:hover {
@@ -26,5 +27,17 @@
 
   &__bin {
     background-image: url('/assets/images/bin.png');
+  }
+
+  &__sort {
+    background-image: url('/assets/images/sort.png');
+  }
+
+  &__sort-up {
+    background-image: url('/assets/images/sort-up.png');
+  }
+
+  &__sort-down {
+    background-image: url('/assets/images/sort-down.png');
   }
 }

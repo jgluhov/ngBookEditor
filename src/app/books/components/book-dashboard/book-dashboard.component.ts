@@ -13,8 +13,18 @@ import { BookService } from '@books/services/book.service';
         placeholder="Search book"
         class="dashboard__serach">
       </app-input>
-      <a class="icon icon__download" (click)="handleDownload()"></a>
-      <a class="icon icon__bin" (click)="handleClear()"></a>
+      <div class="dashboard__sort">
+        <span class="sort__by">
+          Title<app-sort-icon (clicked)="handleTitleSort($event)"></app-sort-icon>
+        </span>
+        <span class="sort__by">
+          Year <app-sort-icon (clicked)="handleYearSort($event)"></app-sort-icon>
+        </span>
+      </div>
+      <div class="dashboard__actions">
+        <a class="icon icon__download" (click)="handleDownload()"></a>
+        <a class="icon icon__bin" (click)="handleClear()"></a>
+      </div>
       <app-button type="button" [routerLink]="['/books/create']">+</app-button>
     </form>
   `,
@@ -22,7 +32,9 @@ import { BookService } from '@books/services/book.service';
 })
 export class BookDashboardComponent implements OnInit {
   dashboardForm = this.fb.group({
-    searchTerm: ['']
+    searchTerm: [''],
+    titleSorting: [''],
+    yearSorting: ['']
   });
 
   constructor(
@@ -31,9 +43,15 @@ export class BookDashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dashboardForm.valueChanges.subscribe(value => {
-      this.bookService.searchBook(value.searchTerm);
-    });
+    // this.dashboardForm.valueChanges.subscribe(value => {
+    //   this.bookService.searchBook(value.searchTerm);
+    // });
+
+    this.bookService.getDashboardState()
+      .subscribe(state => {
+        // debugger;
+        // this.dashboardForm.patchValue(state);
+      });
   }
 
   handleDownload() {
@@ -42,5 +60,13 @@ export class BookDashboardComponent implements OnInit {
 
   handleClear() {
     this.bookService.removeBooks();
+  }
+
+  handleTitleSort(direction) {
+    console.log('title', direction);
+  }
+
+  handleYearSort(direction) {
+    console.log('year', direction);
   }
 }

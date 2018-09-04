@@ -52,6 +52,10 @@ export class BookService {
     return this.store.select(fromBook.getBookById(id));
   }
 
+  getDashboardState(): Observable<object> {
+    return this.store.select(fromBook.getDasboardState);
+  }
+
   loadBooks() {
     this.store.dispatch( new bookActions.GetAll() );
   }

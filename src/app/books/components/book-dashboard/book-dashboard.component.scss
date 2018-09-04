@@ -11,6 +11,21 @@
   &__serach {
     flex: 0 0 280px;
   }
+
+  &__sort, &__actions {
+    display: flex;
+    flex: 0 0 200px;
+    justify-content: space-around;
+  }
+
+  .sort {
+    &__by {
+      display: flex;
+      font-size: 14px;
+      padding: 5px;
+      align-items: center;
+    }
+  }
 }
 
 

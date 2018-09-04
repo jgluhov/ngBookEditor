@@ -1,4 +1,4 @@
-import { BookActionTypes, BookActions, RemoveAll } from './book.actions';
+import { BookActionTypes, BookActions } from './book.actions';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { BookModel } from './models/book.model';
@@ -7,11 +7,15 @@ export const bookAdapter = createEntityAdapter<BookModel>();
 export interface State extends EntityState<BookModel> {
   selectedId: string | null;
   searchTerm: string;
+  titleSorting: string;
+  yearSorting: string;
 }
 
 const defaultBook = {
   selectedId: null,
   searchTerm: '',
+  titleSorting: '',
+  yearSorting: '',
   ids: [],
   entities: {}
 };
@@ -95,6 +99,11 @@ export const getSelectedBook = createSelector(
 export const getBookById = (id: string) => createSelector(
   getBooksEntitiesState,
   (entities) => entities[id] || null
+);
+
+export const getDasboardState = createSelector(
+  getBooksState,
+  ({ searchTerm, titleSorting, yearSorting }) => ({ searchTerm, titleSorting, yearSorting })
 );
 
 export const {
