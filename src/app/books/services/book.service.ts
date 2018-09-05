@@ -56,6 +56,14 @@ export class BookService {
     return this.store.select(fromBook.getDasboardState);
   }
 
+  sortBooksByTitle(direction) {
+    this.store.dispatch( new bookActions.SortByTitle(direction) );
+  }
+
+  sortBooksByYear(direction) {
+    this.store.dispatch( new bookActions.SortByYear(direction) );
+  }
+
   loadBooks() {
     this.store.dispatch( new bookActions.GetAll() );
   }

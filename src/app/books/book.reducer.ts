@@ -66,6 +66,18 @@ export const bookReducer = (
         searchTerm: action.searchTerm
       };
 
+    case BookActionTypes.SORT_BY_TITLE:
+      return {
+        ...state,
+        titleSorting: action.direction,
+      };
+
+    case BookActionTypes.SORT_BY_YEAR:
+      return {
+        ...state,
+        yearSorting: action.direction,
+      };
+
     default:
       return state;
   }

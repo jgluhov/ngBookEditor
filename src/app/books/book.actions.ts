@@ -11,7 +11,9 @@ export enum BookActionTypes {
   ADD_MANY = '[Books] Add many',
   SEARCH_BOOK = '[Books] Search book',
   REMOVE_ALL = '[Books] Remove all',
-  BOOKS_ERROR = '[Books] Books error'
+  BOOKS_ERROR = '[Books] Books error',
+  SORT_BY_TITLE = '[Books] Sort by title',
+  SORT_BY_YEAR = '[Books] Sort by year'
 }
 
 export class AddOne implements Action {
@@ -74,6 +76,18 @@ export class SearchBook implements Action {
   constructor(public searchTerm: string) {}
 }
 
+export class SortByTitle implements Action {
+  readonly type = BookActionTypes.SORT_BY_TITLE;
+
+  constructor(public direction: string) {}
+}
+
+export class SortByYear implements Action {
+  readonly type = BookActionTypes.SORT_BY_YEAR;
+
+  constructor(public direction: string) {}
+}
+
 export type BookActions =
   AddOne |
   UpdateOne |
@@ -84,4 +98,6 @@ export type BookActions =
   SearchBook |
   AddMany |
   RemoveAll |
+  SortByTitle |
+  SortByYear |
   BooksError;

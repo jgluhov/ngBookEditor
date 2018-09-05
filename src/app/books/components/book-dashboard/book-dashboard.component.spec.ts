@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from '@reducers';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BookService } from '@books/services/book.service';
+import { of } from 'rxjs';
 
 describe('BookDashboardComponent', () => {
   let component: BookDashboardComponent;
@@ -14,7 +15,8 @@ describe('BookDashboardComponent', () => {
 
   beforeEach(async(() => {
     bookServiceMock = {
-      searchBook: () => {}
+      searchBook: () => {},
+      getDashboardState: () => of({})
     };
 
     TestBed.configureTestingModule({

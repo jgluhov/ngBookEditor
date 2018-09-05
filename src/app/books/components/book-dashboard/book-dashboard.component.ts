@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { BookService } from '@books/services/book.service';
+import { debounceTime, distinctUntilChanged, filter, take } from '../../../../../node_modules/rxjs/operators';
 
 @Component({
   selector: 'app-book-dashboard',
@@ -32,7 +33,7 @@ import { BookService } from '@books/services/book.service';
 })
 export class BookDashboardComponent implements OnInit {
   dashboardForm = this.fb.group({
-    searchTerm: [''],
+    searchTerm: ['', Validators.required],
     titleSorting: [''],
     yearSorting: ['']
   });
@@ -43,15 +44,18 @@ export class BookDashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.dashboardForm.valueChanges.subscribe(value => {
-    //   this.bookService.searchBook(value.searchTerm);
-    // });
+    this.dashboardForm.get('searchTerm').valueChanges
+      .pipe(
+        debounceTime(50),
+        distinctUntilChanged()
+      )
+      .subscribe(searchTerm => {
+        this.bookService.searchBook(searchTerm);
+      });
 
     this.bookService.getDashboardState()
-      .subscribe(state => {
-        // debugger;
-        // this.dashboardForm.patchValue(state);
-      });
+      .pipe(take(1))
+      .subscribe(state => this.dashboardForm.patchValue(state));
   }
 
   handleDownload() {
@@ -63,10 +67,10 @@ export class BookDashboardComponent implements OnInit {
   }
 
   handleTitleSort(direction) {
-    console.log('title', direction);
+    this.bookService.sortBooksByTitle(direction);
   }
 
   handleYearSort(direction) {
-    console.log('year', direction);
+    this.bookService.sortBooksByYear(direction);
   }
 }

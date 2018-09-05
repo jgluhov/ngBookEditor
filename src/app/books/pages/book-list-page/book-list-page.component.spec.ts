@@ -21,7 +21,8 @@ describe('BookListPageComponent', () => {
 
   beforeEach(async(() => {
     bookServiceMock = {
-      books$: of([new BookModel()])
+      books$: of([new BookModel()]),
+      getDashboardState: () => of({})
     };
 
     TestBed.configureTestingModule({
