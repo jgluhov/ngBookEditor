@@ -97,6 +97,16 @@ export const getSearchTerm = createSelector(
   state => state.searchTerm
 );
 
+export const getTitleSorting = createSelector(
+  getBooksState,
+  state => state.titleSorting
+);
+
+export const getYearSorting = createSelector(
+  getBooksState,
+  state => state.yearSorting
+);
+
 export const getSelectedId = createSelector(
   getBooksState,
   state => state.selectedId

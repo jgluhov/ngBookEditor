@@ -16,7 +16,10 @@ export class BookService {
     this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
     this.books$ = combineLatest(
       this.store.select(fromBook.selectAll),
-      this.store.select(fromBook.getSearchTerm), (books, searchTerm) => {
+      this.store.select(fromBook.getSearchTerm)
+      this.store.select(fromBook.getTitleSorting),
+      this.store.select(fromBook.getYearSorting),
+      (books, searchTerm, titleSorting, yearSorting) => {
         return books.filter((book: BookModel) => this.isSuitable(book, searchTerm));
       });
   }
