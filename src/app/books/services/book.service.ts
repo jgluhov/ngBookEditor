@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, combineLatest, of } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
+import { Observable, combineLatest, from } from 'rxjs';
+import { map, filter, toArray, switchMap } from 'rxjs/operators';
 import { BookModel } from '../models/book.model';
 import * as fromBook from '@books/book.reducer';
 import { Store } from '@ngrx/store';
@@ -15,24 +15,22 @@ export class BookService {
 
   constructor(private http: HttpClient, private store: Store<fromBook.State>) {
     this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
+
     this.books$ = combineLatest(
       this.store.select(fromBook.selectAll),
       this.store.select(fromBook.getSearchTerm),
       this.store.select(fromBook.getTitleSorting),
-      this.store.select(fromBook.getYearSorting),
-      (books, searchTerm, titleSorting, yearSorting) => {
-        const suitableBooks = books.filter(
-          (book: BookModel) => this.isSuitable(book, searchTerm)
-        );
-
-        const titleOrderedBooks = titleSorting ?
-          suitableBooks.sort(this.sortBy('title', titleSorting)) : suitableBooks;
-
-        const titleYearOrderedBooks = yearSorting ?
-          titleOrderedBooks.sort(this.sortBy('year', yearSorting)) : titleOrderedBooks;
-
-        return titleYearOrderedBooks;
-      });
+      this.store.select(fromBook.getYearSorting))
+    .pipe(
+      switchMap(([books, searchTerm, titleDir, yearDir]) => {
+        return from(books)
+            .pipe(
+              filter((book: BookModel) => this.isSuitable(book, searchTerm)),
+              toArray(),
+              map(elems => titleDir ? elems.sort(this.sortBy('title', titleDir)) : elems),
+              map(elems => yearDir ? elems.sort(this.sortBy('year', yearDir)) : elems)
+            );
+      }));
   }
 
   getBooks(): Observable<BookModel[]> {
