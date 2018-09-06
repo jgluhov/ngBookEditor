@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookModel } from '@books/models/book.model';
 
 @Component({
@@ -20,7 +20,10 @@ export class BookFormComponent implements OnInit {
 
   bookForm = this.fb.group({
     id: [''],
-    title: [''],
+    title: ['', Validators.compose([
+      Validators.required,
+      Validators.maxLength(30)
+    ])],
     authors: this.fb.array([ this.createAuthor() ]),
     pageCount: [''],
     imageUrl: [null],
@@ -51,7 +54,15 @@ export class BookFormComponent implements OnInit {
 
   handleSubmit(bookForm: FormGroup): void {
     const book: BookModel = bookForm.value;
-    this.submitted.emit(book);
+
+    if (bookForm.invalid) {
+      console.log('invalid');
+      return;
+    }
+
+
+    console.log(bookForm);
+    // this.submitted.emit(book);
   }
 
 }

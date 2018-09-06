@@ -8,7 +8,26 @@
 .form__label {
   font-size: 13px;
   margin-bottom: 3px;
+
+  &--required {
+    &:before{
+      content: '*';
+      color: red;
+    }
+  }
 }
+
+.form__validation {
+  display: flex;
+  flex-direction: row;
+  padding: 2px 0;
+  color: #de6262;
+}
+
+.validation__message {
+  font-size: 13px;
+}
+
 .form__control {
   padding: 10px;
   border-radius: 3px;
