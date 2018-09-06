@@ -24,10 +24,10 @@ export class BookFormComponent implements OnInit {
       Validators.required,
       Validators.maxLength(30)
     ])],
-    authors: this.fb.array([ this.createAuthor() ]),
+    authors: this.fb.array([ this.createAuthor() ], Validators.minLength(1)),
     pageCount: [''],
     imageUrl: [null],
-    publisher: [''],
+    publisher: ['', Validators.maxLength(30)],
     year: [''],
     releaseDate: ['']
   });
@@ -43,9 +43,17 @@ export class BookFormComponent implements OnInit {
 
   createAuthor() {
     return this.fb.group({
-      firstName: [''],
-      lastName: ['']
+      firstName: ['', Validators.compose([
+        Validators.required, Validators.maxLength(20)
+      ])],
+      lastName: ['', Validators.compose([
+        Validators.required, Validators.maxLength(20)
+      ])]
     });
+  }
+
+  addAuthor() {
+    this.authors.push(this.createAuthor());
   }
 
   get authors(): FormArray {

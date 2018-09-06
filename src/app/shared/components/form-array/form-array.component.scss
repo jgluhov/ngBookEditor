@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-array__add {
+  flex: 1;
+  align-self: flex-end;
+}
+
+.form__validation {
+  display: flex;
+  flex-direction: row;
+  padding: 2px 0;
+  color: #de6262;
+}
+
+.validation__message {
+  font-size: 13px;
+}

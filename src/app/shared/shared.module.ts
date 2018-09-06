@@ -7,6 +7,7 @@ import { FileComponent } from './components/file/file.component';
 import { ButtonComponent } from './components/button/button.component';
 import { SortButtonComponent } from './components/sort-button/sort-button.component';
 import { SortDirectionEnum } from './enums/sort-direction.enum';
+import { FormArrayComponent } from './components/form-array/form-array.component';
 
 @NgModule({
   imports: [
@@ -18,14 +19,16 @@ import { SortDirectionEnum } from './enums/sort-direction.enum';
     InputComponent,
     FileComponent,
     ButtonComponent,
-    SortButtonComponent
+    SortButtonComponent,
+    FormArrayComponent
   ],
   exports: [
     ImageComponent,
     InputComponent,
     FileComponent,
     ButtonComponent,
-    SortButtonComponent
+    SortButtonComponent,
+    FormArrayComponent
   ],
   providers: [{
     provide: 'SortDirectionEnum', useValue: SortDirectionEnum

@@ -10,7 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-  @Input() type: string;
+  @Input() type = 'button';
   @Output() clicked = new EventEmitter<MouseEvent>();
   constructor() { }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -29,33 +30,28 @@ export class InputComponent implements OnInit {
   @Input() controlGroup;
   @Input() placeholder = '';
 
+  private control: FormControl;
+
   constructor() { }
 
   ngOnInit() {
-  }
-
-  get dirty() {
-    return this.controlGroup.controls[this.controlName].dirty;
-  }
-
-  get errors() {
-    return this.controlGroup.controls[this.controlName].errors;
+    this.control = this.controlGroup.controls[this.controlName];
   }
 
   isRequired() {
-    return this.errors && this.errors.required;
+    return this.control.hasError('required');
   }
 
   exceedMaxLength() {
-    return this.errors && this.errors.maxlength;
+    return this.control.hasError('maxlength');
   }
 
   showRequiredMsg() {
-    return this.dirty && this.isRequired();
+    return this.control.dirty && this.isRequired();
   }
 
   showMaxLengthMsg() {
-    return this.dirty && this.exceedMaxLength();
+    return this.control.dirty && this.exceedMaxLength();
   }
 
 }
