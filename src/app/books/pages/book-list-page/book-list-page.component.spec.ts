@@ -7,7 +7,7 @@ import { BookService } from '@books/services/book.service';
 import { BookCardComponent } from '@books/components/book-card/book-card.component';
 import { BookDetailsComponent } from '@books/components/book-details/book-details.component';
 import { AuthorsPipe } from '@books/pipes/authors.pipe';
-import { SharedModule } from '@root/shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BookDashboardComponent } from '@books/components/book-dashboard/book-dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';

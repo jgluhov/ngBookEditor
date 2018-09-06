@@ -5,7 +5,8 @@ import { InputComponent } from './components/input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FileComponent } from './components/file/file.component';
 import { ButtonComponent } from './components/button/button.component';
-import { SortIconComponent } from './components/sort-icon/sort-icon.component';
+import { SortButtonComponent } from './components/sort-button/sort-button.component';
+import { SortDirectionEnum } from './enums/sort-direction.enum';
 
 @NgModule({
   imports: [
@@ -17,14 +18,17 @@ import { SortIconComponent } from './components/sort-icon/sort-icon.component';
     InputComponent,
     FileComponent,
     ButtonComponent,
-    SortIconComponent
+    SortButtonComponent
   ],
   exports: [
     ImageComponent,
     InputComponent,
     FileComponent,
     ButtonComponent,
-    SortIconComponent
-  ]
+    SortButtonComponent
+  ],
+  providers: [{
+    provide: 'SortDirectionEnum', useValue: SortDirectionEnum
+  }]
 })
 export class SharedModule { }

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, combineLatest, of } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 import { BookModel } from '../models/book.model';
 import * as fromBook from '@books/book.reducer';
 import { Store } from '@ngrx/store';
 import * as bookActions from '@books/book.actions';
+import { SortDirectionEnum } from '@shared/enums/sort-direction.enum';
 
 @Injectable()
 export class BookService {
@@ -16,11 +17,21 @@ export class BookService {
     this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
     this.books$ = combineLatest(
       this.store.select(fromBook.selectAll),
-      this.store.select(fromBook.getSearchTerm)
+      this.store.select(fromBook.getSearchTerm),
       this.store.select(fromBook.getTitleSorting),
       this.store.select(fromBook.getYearSorting),
       (books, searchTerm, titleSorting, yearSorting) => {
-        return books.filter((book: BookModel) => this.isSuitable(book, searchTerm));
+        const suitableBooks = books.filter(
+          (book: BookModel) => this.isSuitable(book, searchTerm)
+        );
+
+        const titleOrderedBooks = titleSorting ?
+          suitableBooks.sort(this.sortBy('title', titleSorting)) : suitableBooks;
+
+        const titleYearOrderedBooks = yearSorting ?
+          titleOrderedBooks.sort(this.sortBy('year', yearSorting)) : titleOrderedBooks;
+
+        return titleYearOrderedBooks;
       });
   }
 
@@ -81,5 +92,27 @@ export class BookService {
     const term = searchTerm.toLowerCase();
 
     return title.includes(term) || year.includes(term);
+  }
+
+  sortBy(key: string, direction: string) {
+    return (bookA: BookModel, bookB: BookModel): number => {
+      const keyA = bookA[key];
+      const keyB = bookB[key];
+
+      if (!keyA || !keyB || direction === SortDirectionEnum.NONE) {
+        return 0;
+      }
+
+      const comp1 = direction === SortDirectionEnum.ASC ? 1 : -1;
+      const comp2 = direction === SortDirectionEnum.ASC ? -1 : 1;
+
+      if (keyA > keyB) {
+        return comp1;
+      } else if (keyA < keyB) {
+        return comp2;
+      } else {
+        return 0;
+      }
+    };
   }
 }

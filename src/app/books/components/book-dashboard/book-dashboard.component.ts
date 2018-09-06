@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BookService } from '@books/services/book.service';
-import { debounceTime, distinctUntilChanged, filter, take } from '../../../../../node_modules/rxjs/operators';
+import { debounceTime, distinctUntilChanged, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-book-dashboard',
@@ -16,10 +16,10 @@ import { debounceTime, distinctUntilChanged, filter, take } from '../../../../..
       </app-input>
       <div class="dashboard__sort">
         <span class="sort__by">
-          Title<app-sort-icon (clicked)="handleTitleSort($event)"></app-sort-icon>
+          Title<app-sort-icon [controlGroup]="dashboardForm" controlName="titleSorting"></app-sort-icon>
         </span>
         <span class="sort__by">
-          Year <app-sort-icon (clicked)="handleYearSort($event)"></app-sort-icon>
+          Year <app-sort-icon [controlGroup]="dashboardForm" controlName="yearSorting"></app-sort-icon>
         </span>
       </div>
       <div class="dashboard__actions">
@@ -53,6 +53,16 @@ export class BookDashboardComponent implements OnInit {
         this.bookService.searchBook(searchTerm);
       });
 
+    this.dashboardForm.get('titleSorting').valueChanges
+      .subscribe(direction => {
+        this.bookService.sortBooksByTitle(direction);
+      });
+
+    this.dashboardForm.get('yearSorting').valueChanges
+      .subscribe(direction => {
+        this.bookService.sortBooksByYear(direction);
+      });
+
     this.bookService.getDashboardState()
       .pipe(take(1))
       .subscribe(state => this.dashboardForm.patchValue(state));
@@ -64,13 +74,5 @@ export class BookDashboardComponent implements OnInit {
 
   handleClear() {
     this.bookService.removeBooks();
-  }
-
-  handleTitleSort(direction) {
-    this.bookService.sortBooksByTitle(direction);
-  }
-
-  handleYearSort(direction) {
-    this.bookService.sortBooksByYear(direction);
   }
 }

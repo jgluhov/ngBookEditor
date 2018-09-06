@@ -26,8 +26,14 @@
       "@books/*": [
         "src/app/books/*"
       ],
-      "@root/*": [
+      "@app/*": [
         "src/app/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
       ]
     }
   }

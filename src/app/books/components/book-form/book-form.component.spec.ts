@@ -2,8 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookFormComponent } from './book-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BookModel } from '@books/models/book.model';
-import { SharedModule } from '@root/shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 describe('BookFormComponent', () => {
   let component: BookFormComponent;

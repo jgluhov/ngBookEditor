@@ -7,7 +7,7 @@ import { of } from 'rxjs';
 import { reducers } from '@reducers';
 import { StoreModule } from '@ngrx/store';
 import { BookFormComponent } from '@books/components/book-form/book-form.component';
-import { SharedModule } from '@root/shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 import { BookService } from '@books/services/book.service';
 import { BookModel } from '@books/models/book.model';
 

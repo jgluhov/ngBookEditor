@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BookDashboardComponent } from './book-dashboard.component';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
-import { SharedModule } from '@root/shared/shared.module';
+import { SharedModule } from '@app/shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from '@reducers';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -29,11 +29,9 @@ describe('BookDashboardComponent', () => {
       declarations: [
         BookDashboardComponent
       ],
-      providers: [
-        {
-          provide: BookService, useValue: bookServiceMock
-        }
-      ]
+      providers: [{
+        provide: BookService, useValue: bookServiceMock
+      }]
     })
     .compileComponents();
   }));
@@ -42,7 +40,9 @@ describe('BookDashboardComponent', () => {
     fixture = TestBed.createComponent(BookDashboardComponent);
     component = fixture.componentInstance;
     component.dashboardForm = new FormGroup({
-      searchTerm: new FormControl('')
+      searchTerm: new FormControl(''),
+      titleSorting: new FormControl(''),
+      yearSorting: new FormControl('')
     });
     fixture.detectChanges();
   });

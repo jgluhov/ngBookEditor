@@ -4,7 +4,7 @@ import { Deserializable } from './deserialize.model';
 
 export class BookModel extends BaseModel implements Deserializable {
   publisher: string;
-  year: Date;
+  year: number;
   releaseDate: Date;
   isbn: string;
   imageUrl: string;
