@@ -19,7 +19,7 @@ import { FormControl } from '@angular/forms';
             The text entered exceeds the maximum length
           </span>
           <span *ngIf="showOutRangeMsg()" class="validation__message">
-            The number went out of the range
+            The number shod be between {{errors.rangeStart}} and {{errors.rangeEnd}}
           </span>
         </div>
     </div>
@@ -50,7 +50,12 @@ export class InputComponent implements OnInit {
   }
 
   showOutRangeMsg() {
+    console.log(this.formControl.errors && this.formControl.errors.validRange);
     return this.formControl.dirty && this.formControl.hasError('validRange');
+  }
+
+  get errors() {
+    return this.formControl.errors || {};
   }
 
   get formControl() {
