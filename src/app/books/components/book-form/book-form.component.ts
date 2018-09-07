@@ -2,6 +2,8 @@ import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } fro
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookModel } from '@books/models/book.model';
 import { ValidateRange } from '@books/validations/range.validation';
+import { ValidateGreaterThan } from '@books/validations/greater-than.vaidation';
+import { ValidateGreaterThanDate } from '../../validations/greater-than-date.validation';
 
 @Component({
   selector: 'app-book-form',
@@ -32,8 +34,8 @@ export class BookFormComponent implements OnInit {
     ])],
     imageUrl: [null],
     publisher: ['', Validators.maxLength(30)],
-    year: [''],
-    releaseDate: ['']
+    year: ['', ValidateGreaterThan(1800)],
+    releaseDate: ['', ValidateGreaterThanDate(new Date(1800, 0, 1))]
   });
 
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) { }
@@ -68,13 +70,10 @@ export class BookFormComponent implements OnInit {
     const book: BookModel = bookForm.value;
 
     if (bookForm.invalid) {
-      console.log('invalid');
       return;
     }
 
-
-    console.log(bookForm);
-    // this.submitted.emit(book);
+    this.submitted.emit(book);
   }
 
 }

@@ -19,7 +19,13 @@ import { FormControl } from '@angular/forms';
             The text entered exceeds the maximum length
           </span>
           <span *ngIf="showOutRangeMsg()" class="validation__message">
-            The number shod be between {{errors.rangeStart}} and {{errors.rangeEnd}}
+            The number should be between {{errors.rangeStart}} and {{errors.rangeEnd}}
+          </span>
+          <span *ngIf="showGreaterThanMsg()" class="validation__message">
+            The number should be greater than {{errors.greaterThenBoundary}}
+          </span>
+          <span *ngIf="showGreaterThanDateMsg()" class="validation__message">
+            The date should be greater than {{errors.greaterThenBoundaryDate}}
           </span>
         </div>
     </div>
@@ -51,6 +57,14 @@ export class InputComponent implements OnInit {
 
   showOutRangeMsg() {
     return this.formControl.dirty && this.formControl.hasError('validRange');
+  }
+
+  showGreaterThanMsg() {
+    return this.formControl.dirty && this.formControl.hasError('validGreaterThan');
+  }
+
+  showGreaterThanDateMsg() {
+    return this.formControl.dirty && this.formControl.hasError('validGreaterThanDate');
   }
 
   get errors() {
