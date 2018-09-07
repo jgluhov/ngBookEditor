@@ -5,7 +5,7 @@ import { FormControl } from '@angular/forms';
   selector: 'app-input',
   template: `
     <div [formGroup]="controlGroup" class="form__group">
-      <label class="form__label">{{label}}<span *ngIf="isRequired()" class="form__label--required"></span></label>
+      <label class="form__label">{{label}}<span *ngIf="hasSign" class="form__label--required"></span></label>
       <input [type]="type"
         formControlName="{{controlName}}"
         class="form__control"
@@ -17,6 +17,9 @@ import { FormControl } from '@angular/forms';
           </span>
           <span *ngIf="showMaxLengthMsg()" class="validation__message">
             The text entered exceeds the maximum length
+          </span>
+          <span *ngIf="showOutRangeMsg()" class="validation__message">
+            The number went out of the range
           </span>
         </div>
     </div>
@@ -30,28 +33,28 @@ export class InputComponent implements OnInit {
   @Input() controlGroup;
   @Input() placeholder = '';
 
-  private control: FormControl;
-
-  constructor() { }
+  hasSign;
 
   ngOnInit() {
-    this.control = this.controlGroup.controls[this.controlName];
-  }
-
-  isRequired() {
-    return this.control.hasError('required');
-  }
-
-  exceedMaxLength() {
-    return this.control.hasError('maxlength');
+    this.hasSign = this.formControl.hasError('required');
   }
 
   showRequiredMsg() {
-    return this.control.dirty && this.isRequired();
+    return this.formControl.dirty &&
+      this.formControl.hasError('required');
   }
 
   showMaxLengthMsg() {
-    return this.control.dirty && this.exceedMaxLength();
+    return this.formControl.dirty &&
+      this.formControl.hasError('maxlength');
+  }
+
+  showOutRangeMsg() {
+    return this.formControl.dirty && this.formControl.hasError('validRange');
+  }
+
+  get formControl() {
+    return this.controlGroup.controls[this.controlName];
   }
 
 }

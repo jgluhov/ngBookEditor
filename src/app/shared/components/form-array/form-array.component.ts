@@ -12,24 +12,20 @@ import { FormControl } from '@angular/forms';
   `,
   styleUrls: ['./form-array.component.scss']
 })
-export class FormArrayComponent implements OnInit {
+export class FormArrayComponent {
   @Input() controlName;
   @Input() controlGroup;
   @Output() added = new EventEmitter();
 
-  private control: FormControl;
-
-  constructor() { }
-
-  ngOnInit() {
-    this.control = this.controlGroup.controls[this.controlName];
+  get formControl() {
+    return this.controlGroup.controls[this.controlName];
   }
 
   exceedMinLength() {
-    return this.control.hasError('minlength');
+    return this.formControl.hasError('minlength');
   }
 
   showMaxLengthMsg() {
-    return this.control.dirty && this.control.hasError('minlength');
+    return this.formControl.dirty && this.formControl.hasError('minlength');
   }
 }

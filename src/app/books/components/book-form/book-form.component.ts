@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookModel } from '@books/models/book.model';
+import { ValidateRange } from '@books/validations/range.validation';
 
 @Component({
   selector: 'app-book-form',
@@ -25,7 +26,10 @@ export class BookFormComponent implements OnInit {
       Validators.maxLength(30)
     ])],
     authors: this.fb.array([ this.createAuthor() ], Validators.minLength(1)),
-    pageCount: [''],
+    pageCount: ['', Validators.compose([
+      Validators.required,
+      ValidateRange(0, 10000)
+    ])],
     imageUrl: [null],
     publisher: ['', Validators.maxLength(30)],
     year: [''],
