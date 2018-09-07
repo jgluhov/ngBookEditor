@@ -33,7 +33,7 @@ import { debounceTime, distinctUntilChanged, take } from 'rxjs/operators';
 })
 export class BookDashboardComponent implements OnInit {
   dashboardForm = this.fb.group({
-    searchTerm: ['', Validators.required],
+    searchTerm: [''],
     titleSorting: [''],
     yearSorting: ['']
   });

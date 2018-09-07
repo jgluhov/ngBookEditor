@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { BookModel } from '@books/models/book.model';
 import { ValidateRange } from '@books/validations/range.validation';
 import { ValidateGreaterThan } from '@books/validations/greater-than.vaidation';
@@ -70,10 +70,22 @@ export class BookFormComponent implements OnInit {
     const book: BookModel = bookForm.value;
 
     if (bookForm.invalid) {
+      this.validateAll(bookForm);
       return;
     }
 
     this.submitted.emit(book);
+  }
+
+  validateAll(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(controlName => {
+      const controlOrGroup = <FormGroup>formGroup.controls[controlName];
+        if (controlOrGroup.controls) {
+          this.validateAll(controlOrGroup);
+        }
+        controlOrGroup.markAsDirty({ onlySelf: true });
+      });
+    }
   }
 
 }
