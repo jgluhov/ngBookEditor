@@ -50,7 +50,6 @@ export class InputComponent implements OnInit {
   }
 
   showOutRangeMsg() {
-    console.log(this.formControl.errors && this.formControl.errors.validRange);
     return this.formControl.dirty && this.formControl.hasError('validRange');
   }
 
