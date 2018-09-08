@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:3000',
+  baseUrl: '/ngBookEditor',
   placeholderUrl: '/assets/placeholder.png',
   booksUrl: '/assets/books.json'
 };

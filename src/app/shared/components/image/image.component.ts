@@ -10,9 +10,15 @@ import { environment } from '@environments/environment';
 })
 export class ImageComponent {
   imageUrl: string;
-  placeholderUrl = `${environment.placeholderUrl}`;
+  placeholderUrl = `${environment.baseUrl}${environment.placeholderUrl}`;
   @Input() set src(path) {
-    this.imageUrl = path || this.placeholderUrl;
+    if (path && path.includes('base64')) {
+      this.imageUrl = path;
+    } else if (path) {
+      this.imageUrl = `${environment.baseUrl}${path}`;
+    } else {
+      this.imageUrl = this.placeholderUrl;
+    }
   }
 
   handleError() {
