@@ -8,14 +8,14 @@ export const reducers: ActionReducerMap<any> = {
   books: fromBooks.bookReducer
 };
 
-const localStorageSyncReducer = (
+export function localStorageSyncReducer (
   reducer: ActionReducer<ReducerState>
-): ActionReducer<ReducerState> => {
+): ActionReducer<ReducerState> {
   return localStorageSync({
     keys: ['books'],
     rehydrate: true
   })(reducer);
-};
+}
 
 export const metaReducers: Array<MetaReducer<ReducerState, Action>> = [
   localStorageSyncReducer

@@ -22,10 +22,10 @@ const defaultBook = {
 
 export const initialState: State = bookAdapter.getInitialState(defaultBook);
 
-export const bookReducer = (
+export function bookReducer (
   state: State = initialState,
   action: BookActions
-) => {
+) {
 
   switch (action.type) {
 
