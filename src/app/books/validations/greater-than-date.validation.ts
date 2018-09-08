@@ -13,8 +13,10 @@ export function ValidateGreaterThanDate(boundaryDate: Date) {
       ].join('/')
     };
 
-    if (!date) {
-      return invalidState;
+    const invalidDate = isNaN(Date.parse(new Date(date).toString()));
+
+    if (!date || invalidDate) {
+      return null;
     }
 
     if (new Date(date).getTime() < boundaryDate.getTime()) {

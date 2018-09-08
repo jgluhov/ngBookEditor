@@ -1,17 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BookListPageComponent } from './book-list-page.component';
+import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { of } from 'rxjs';
 import { reducers, metaReducers } from '@reducers';
 import { BookService } from '@books/services/book.service';
-import { BookCardComponent } from '@books/components/book-card/book-card.component';
-import { BookDetailsComponent } from '@books/components/book-details/book-details.component';
 import { AuthorsPipe } from '@books/pipes/authors.pipe';
 import { SharedModule } from '@app/shared/shared.module';
-import { RouterTestingModule } from '@angular/router/testing';
-import { BookDashboardComponent } from '@books/components/book-dashboard/book-dashboard.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { of } from 'rxjs';
+import { BookListPageComponent } from './book-list-page.component';
+import {
+  BookDashboardComponent,
+  BookCardComponent,
+  BookDetailsComponent
+} from '@books/components';
 import { BookModel } from '@books/models/book.model';
 
 describe('BookListPageComponent', () => {

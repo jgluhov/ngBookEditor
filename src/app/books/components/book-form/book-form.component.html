@@ -1,26 +1,86 @@
-<form [formGroup]="bookForm" novalidate class="form" (ngSubmit)="handleSubmit(bookForm)">
+<form [formGroup]="bookForm"
+  novalidate
+  class="form"
+  (ngSubmit)="handleSubmit(bookForm)">
+
   <div class="form__image">
     <app-image [src]="imageUrl"></app-image>
   </div>
-  <app-input type="text" label="Title" [controlGroup]="bookForm" controlName="title" class="form-row"></app-input>
-  <app-form-array [controlGroup]="bookForm" controlName="authors" (added)="addAuthor()">
+
+  <app-input type="text"
+    label="Title"
+    [controlGroup]="bookForm"
+    controlName="title"
+    class="form-row row"
+    requiredIcon="true">
+  </app-input>
+
+  <app-form-array label="Authors"
+    class="form-row"
+    [controlGroup]="bookForm"
+    controlName="authors"
+    (added)="addAuthor()">
     <div formArrayName="authors">
-      <div *ngFor="let authorForm of authors.controls">
+      <div *ngFor="let authorForm of authors.controls; index as i">
+        <div *ngIf="index" class="icon icon__exit form__icon--right"></div>
         <div [formGroup]="authorForm" class="row">
-          <app-input type="text" label="First name" [controlGroup]="authorForm" controlName="firstName" class="column"></app-input>
-          <app-input type="text" label="Last name" [controlGroup]="authorForm" controlName="lastName" class="column"></app-input>
+          <app-input type="text"
+            label="First name"
+            class="column"
+            [controlGroup]="authorForm"
+            controlName="firstName"
+            requiredIcon="true">
+          </app-input>
+          <app-input type="text"
+            label="Last name"
+            class="column"
+            [controlGroup]="authorForm"
+            controlName="lastName"
+            requiredIcon="true">
+          </app-input>
         </div>
       </div>
     </div>
   </app-form-array>
+
   <div class="form-row row">
-      <app-input type="text" label="Publisher" [controlGroup]="bookForm" controlName="publisher" class="column"></app-input>
-      <app-input type="number" label="Pages" [controlGroup]="bookForm" controlName="pageCount" class="column"></app-input>
+      <app-input type="text"
+        label="Publisher"
+        [controlGroup]="bookForm"
+        controlName="publisher"
+        class="column">
+      </app-input>
+      <app-input type="number"
+        label="Pages"
+        [controlGroup]="bookForm"
+        controlName="pageCount"
+        class="column">
+      </app-input>
   </div>
   <div class="form-row row">
-      <app-input type="number" label="Year" [controlGroup]="bookForm" controlName="year" class="column"></app-input>
-      <app-input type="date" label="Release date" [controlGroup]="bookForm" controlName="releaseDate" class="column"></app-input>
+      <app-input type="number"
+        label="Year"
+        [controlGroup]="bookForm"
+        controlName="year"
+        class="column">
+      </app-input>
+      <app-input type="date"
+        label="Release date"
+        [controlGroup]="bookForm"
+        controlName="releaseDate"
+        class="column">
+      </app-input>
   </div>
-  <app-file [controlGroup]="bookForm" controlName="imageUrl"></app-file>
+  <div class="form-row">
+    <app-input type="text"
+      label="ISBN"
+      [controlGroup]="bookForm"
+      controlName="isbn">
+    </app-input>
+  </div>
+  <app-file [controlGroup]="bookForm"
+    controlName="imageUrl"
+    class="form-row">
+  </app-file>
   <app-button type="submit" class="form__submit">Submit</app-button>
 </form>

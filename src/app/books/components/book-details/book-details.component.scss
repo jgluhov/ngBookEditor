@@ -1,11 +1,6 @@
 @import 'partials/variables';
 
 .details {
-  display: block;
-  position: fixed;
-  width: calc((100% - #{$card-item-width}) - 20px);
-  padding: 10px;
-
   &__image {
     height: 300px;
     width: 200px;

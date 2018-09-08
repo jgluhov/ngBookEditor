@@ -18,7 +18,7 @@
 
 .form__validation {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 2px 0;
   color: #de6262;
 }
@@ -42,5 +42,11 @@
     border-color: rgba(0,0,0,.23);
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0,0,0,.15);
+  }
+
+  &.ng-dirty {
+    &.ng-invalid {
+      border-color: #de6262;
+    }
   }
 }

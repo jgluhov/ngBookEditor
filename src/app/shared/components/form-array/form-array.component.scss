@@ -3,9 +3,13 @@
   flex-direction: column;
 }
 
-.form-array__add {
-  flex: 1;
-  align-self: flex-end;
+.form-array__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__label {
+  font-size: 14px;
 }
 
 .form__validation {

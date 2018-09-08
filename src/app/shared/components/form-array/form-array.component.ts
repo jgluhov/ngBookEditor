@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form-array',
   template: `
-    <app-button class="form-array__add" (clicked)="added.emit()">+</app-button>
+    <div class="form-array__header">
+      <div class="header__label">{{label}}</div>
+      <app-button (clicked)="added.emit()">+</app-button>
+    </div>
     <ng-content></ng-content>
     <div class="form__validation">
       <div *ngIf="exceedMinLength()" class="validation__message">Add more fields</div>
@@ -13,6 +15,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./form-array.component.scss']
 })
 export class FormArrayComponent {
+  @Input() label;
   @Input() controlName;
   @Input() controlGroup;
   @Output() added = new EventEmitter();
