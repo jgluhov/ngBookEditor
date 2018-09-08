@@ -23,10 +23,10 @@ import { debounceTime, distinctUntilChanged, take } from 'rxjs/operators';
         </span>
       </div>
       <div class="dashboard__actions">
-        <a class="icon icon__download" (click)="handleDownload()"></a>
-        <a class="icon icon__bin" (click)="handleClear()"></a>
+        <a class="icon icon__download" (click)="handleDownload()" title="Load books"></a>
+        <a class="icon icon__bin" (click)="handleClear()" title="Remove all"></a>
       </div>
-      <app-button type="button" [routerLink]="['/books/create']">+</app-button>
+      <app-button type="button" [routerLink]="['/books/create']" title="Create book">+</app-button>
     </form>
   `,
   styleUrls: ['./book-dashboard.component.scss']
