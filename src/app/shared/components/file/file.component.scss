@@ -1,9 +1,10 @@
 @import 'mixins/truncate';
+@import 'partials/variables';
 
 .file__container {
   padding: 10px 15px;
-  background-color: white;
-  border: 1px solid #ced4da;
+  background-color: $color-white;
+  border: 1px solid $color-ghost;
 }
 
 .form-group {

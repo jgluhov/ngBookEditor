@@ -22,7 +22,6 @@
     (added)="addAuthor()">
     <div formArrayName="authors">
       <div *ngFor="let authorForm of authors.controls; index as i">
-        <div *ngIf="index" class="icon icon__exit form__icon--right"></div>
         <div [formGroup]="authorForm" class="row">
           <app-input type="text"
             label="First name"

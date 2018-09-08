@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   template: `
     <div class="form-array__header">
       <div class="header__label">{{label}}</div>
-      <app-button (clicked)="added.emit()">+</app-button>
+      <app-button (clicked)="added.emit()" tabIndex="-1">+</app-button>
     </div>
     <ng-content></ng-content>
     <div class="form__validation">

@@ -1,3 +1,5 @@
+@import 'partials/variables';
+
 :host {
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@
   display: flex;
   flex-direction: row;
   padding: 2px 0;
-  color: #de6262;
+  color: $color-error;
 }
 
 .validation__message {

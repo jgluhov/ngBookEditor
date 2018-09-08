@@ -5,7 +5,7 @@ import { FormGroup } from '@angular/forms';
   selector: 'app-file',
   template: `
     <div [formGroup]="controlGroup" class="file__container form-group">
-      <input type="file" (change)="handleFileChange($event)" #fileInput class="file__input"/>
+      <input type="file" (change)="handleFileChange($event)" #fileInput class="file__input" [accept]="accept" />
       <app-button type="button" (clicked)="handleClick($event)" class="file__button">Select cover</app-button>
       <span *ngIf="isEmpty()">No cover choosen</span>
       <span *ngIf="!isEmpty()">{{file.name}}</span>
@@ -17,6 +17,7 @@ export class FileComponent implements OnInit {
   file: File = null;
   @Input() controlGroup: FormGroup;
   @Input() controlName: string;
+  @Input() accept = 'image/*';
   @ViewChild('fileInput') fileInput;
   constructor(private cd: ChangeDetectorRef) { }
 
@@ -34,7 +35,6 @@ export class FileComponent implements OnInit {
   handleFileChange(evt: Event) {
     const reader = new FileReader();
     const inputEl = <HTMLInputElement>evt.target;
-    const files = inputEl.files;
 
     if (inputEl.files && inputEl.files.length) {
       const [file] = [].slice.call(inputEl.files);

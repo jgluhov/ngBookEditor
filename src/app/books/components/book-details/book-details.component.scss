@@ -2,8 +2,8 @@
 
 .details {
   &__image {
-    height: 300px;
-    width: 200px;
+    height: $book-cover-height;
+    width: $book-cover-width;
 
     float: left;
   }

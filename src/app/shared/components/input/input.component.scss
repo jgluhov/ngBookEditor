@@ -1,3 +1,5 @@
+@import 'partials/variables';
+
 .form__group {
   display: flex;
   flex-direction: column;
@@ -5,13 +7,13 @@
 }
 
 .form__label {
-  font-size: 13px;
+  font-size: $form-control-label-font-size;
   margin-bottom: 3px;
 
   &--required {
     &:before{
       content: '*';
-      color: red;
+      color: $color-error;
     }
   }
 }
@@ -20,7 +22,7 @@
   display: flex;
   flex-direction: column;
   padding: 2px 0;
-  color: #de6262;
+  color: $color-error;
 }
 
 .validation__message {
@@ -28,17 +30,17 @@
 }
 
 .form__control {
-  padding: 10px;
-  border-radius: 3px;
+  padding: $form-control-padding;
+  border-radius: $form-control-border-radius;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 1px solid $color-ghost;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  font-size: 16px;
-  height: 40px;
+  font-size: $form-control-font-size;
+  height: $form-control-height;
 
   &:focus {
-    color: #495057;
-    background-color: #fff;
+    color: $color-trout;
+    background-color: $color-white;
     border-color: rgba(0,0,0,.23);
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0,0,0,.15);
@@ -46,7 +48,7 @@
 
   &.ng-dirty {
     &.ng-invalid {
-      border-color: #de6262;
+      border-color: $color-error;
     }
   }
 }

@@ -1,10 +1,28 @@
 $bg-color: #eeeeee;
+$color-error: #de6262;
+$color-trout: #495057;
+$color-ghost: #ced4da;
+$color-white: #ffffff;
 
 $card-item-width: 300px;
 
 $icon-size: 20px;
 
-
 $sidebar-width: 300px;
 $dashboard-height: 55px;
 $details-padding: 10px;
+
+// Cover
+$book-cover-width: 200px;
+$book-cover-height: 300px;
+
+// Forms
+$form-control-font-size: 16px;
+$form-control-label-font-size: 13px;
+$form-control-height: 40px;
+$form-control-padding: 10px;
+$form-control-border-radius: 3px;
+
+// Dashboard
+$dashboard-search-width: 280px;
+$dashboard-actions-width: 200px;

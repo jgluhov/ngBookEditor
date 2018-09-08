@@ -1,20 +1,22 @@
+@import 'partials/variables';
+
 .dashboard {
   display: flex;
   justify-content: space-between;
   position: fixed;
   width: 100%;
-  background: white;
+  background: $color-white;
   z-index: 1;
   align-items: center;
   padding: 5px 15px;
 
   &__serach {
-    flex: 0 0 280px;
+    flex: 0 0 $dashboard-search-width;
   }
 
   &__sort, &__actions {
     display: flex;
-    flex: 0 0 200px;
+    flex: 0 0 $dashboard-actions-width;
     justify-content: space-around;
   }
 
