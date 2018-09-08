@@ -82,7 +82,7 @@ export function bookReducer (
       return state;
   }
 
-};
+}
 
 // Selectors
 export const getBooksState = createFeatureSelector<State>('books');
