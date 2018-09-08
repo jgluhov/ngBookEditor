@@ -19,6 +19,9 @@
 @media screen and (min-width: $tablet-width) {
   .column {
     flex: 1;
+    &:not(:last-child) {
+      padding-right: 10px;
+    }
   }
   ._25 {
     flex: 2.5;
