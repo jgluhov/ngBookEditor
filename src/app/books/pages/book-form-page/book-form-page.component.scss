@@ -6,6 +6,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  padding: 0 20px;
 
   &__content {
     padding-top: 48px;
@@ -13,14 +14,14 @@
     width: 100%;
   }
 
-  @include desktop {
-    &__actions {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      display: flex;
-    }
+  &__actions {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+  }
 
+  @include desktop {
     &__content {
       max-width: 700px;
     }
