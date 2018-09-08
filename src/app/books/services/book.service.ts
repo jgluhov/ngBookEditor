@@ -89,9 +89,11 @@ export class BookService {
   isSuitable(book: BookModel, searchTerm: string) {
     const title = book.title.toLowerCase();
     const year = book.year.toString();
+    const authors = book.authors
+      .map(author => `${author.firstName}${author.lastName}`.toLowerCase()).join('');
     const term = searchTerm.toLowerCase();
 
-    return title.includes(term) || year.includes(term);
+    return title.includes(term) || year.includes(term) || authors.includes(term);
   }
 
   sortBy(key: string, direction: string) {

@@ -41,7 +41,7 @@ export class BookFormComponent implements OnInit, OnChanges {
     ])],
     authors: this.fb.array([
       this.createAuthor()
-    ], Validators.minLength(1)),
+    ], Validators.required),
     pageCount: ['', Validators.compose([
       Validators.required,
       ValidateRange(1, 10000)

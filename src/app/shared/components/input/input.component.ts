@@ -31,7 +31,7 @@ import { Component, Input } from '@angular/core';
           The date should be greater than {{errors.greaterThenBoundaryDate}}
         </span>
         <span *ngIf="showIncorrectISBNMsg()" class="validation__message">
-          The ISBN has incorrect format
+          The ISBN has incorrect format for example: ISBN 978-3-16-148410-2
         </span>
         <span *ngIf="showIncorrectYearMsg()" class="validation__message">
           Incorrect format of entered year

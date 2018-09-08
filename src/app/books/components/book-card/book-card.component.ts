@@ -7,7 +7,8 @@ import { BookModel } from '@books/models/book.model';
     <div class="book-card" (click)="selected.emit()" [ngClass]="handleActiveClass()">
       <div class="book-card__title">{{book.title}}</div>
       <div class="book-card__description">
-        <span class="description__term">Written by</span> {{ book.authors | authors }}
+        <span class="description__term">Written by </span>
+        <span class="description__authors">{{ book.authors | authors : 1 }}</span>
         <span class="description__term"> in </span> {{ book.year }}
       </div>
     </div>

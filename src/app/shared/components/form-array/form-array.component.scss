@@ -12,6 +12,13 @@
 
 .header__label {
   font-size: 14px;
+
+  &--required {
+    &:before{
+      content: '*';
+      color: $color-error;
+    }
+  }
 }
 
 .form__validation {

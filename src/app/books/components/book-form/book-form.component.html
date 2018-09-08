@@ -12,14 +12,15 @@
     [controlGroup]="bookForm"
     controlName="title"
     class="form-row row"
-    requiredIcon="true">
+    [requiredIcon]="true">
   </app-input>
 
   <app-form-array label="Authors"
     class="form-row"
     [controlGroup]="bookForm"
     controlName="authors"
-    (added)="addAuthor()">
+    (added)="addAuthor()"
+    [requiredIcon]="true">
     <div formArrayName="authors">
       <div *ngFor="let authorForm of authors.controls; index as i">
         <div [formGroup]="authorForm" class="row">
@@ -28,14 +29,14 @@
             class="column"
             [controlGroup]="authorForm"
             controlName="firstName"
-            requiredIcon="true">
+            [requiredIcon]="true">
           </app-input>
           <app-input type="text"
             label="Last name"
             class="column"
             [controlGroup]="authorForm"
             controlName="lastName"
-            requiredIcon="true">
+            [requiredIcon]="true">
           </app-input>
         </div>
       </div>
