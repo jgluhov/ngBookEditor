@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000',
-  placeholderUrl: '/assets/placeholder.png'
+  placeholderUrl: '/assets/placeholder.png',
+  booksUrl: '/assets/books.json'
 };
 
 /*

@@ -1,6 +1,5 @@
 import { BookActionTypes, BookActions } from './book.actions';
 import { EntityState, createEntityAdapter } from '@ngrx/entity';
-import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { BookModel } from './models/book.model';
 
 export const bookAdapter = createEntityAdapter<BookModel>();
@@ -83,54 +82,3 @@ export function bookReducer (
   }
 
 }
-
-// Selectors
-export const getBooksState = createFeatureSelector<State>('books');
-
-export const getBooksEntitiesState = createSelector(
-  getBooksState,
-  state => state.entities
-);
-
-export const getSearchTerm = createSelector(
-  getBooksState,
-  state => state.searchTerm
-);
-
-export const getTitleSorting = createSelector(
-  getBooksState,
-  state => state.titleSorting
-);
-
-export const getYearSorting = createSelector(
-  getBooksState,
-  state => state.yearSorting
-);
-
-export const getSelectedId = createSelector(
-  getBooksState,
-  state => state.selectedId
-);
-
-export const getSelectedBook = createSelector(
-  getBooksEntitiesState,
-  getSelectedId,
-  (entities, id) => entities[id] || null
-);
-
-export const getBookById = (id: string) => createSelector(
-  getBooksEntitiesState,
-  (entities) => entities[id] || null
-);
-
-export const getDasboardState = createSelector(
-  getBooksState,
-  ({ searchTerm, titleSorting, yearSorting }) => ({ searchTerm, titleSorting, yearSorting })
-);
-
-export const {
-  selectIds,
-  selectEntities,
-  selectAll,
-  selectTotal,
-} = bookAdapter.getSelectors(getBooksState);

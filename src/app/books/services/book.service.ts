@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Store } from '@ngrx/store';
 import { Observable, combineLatest, from } from 'rxjs';
 import { map, filter, toArray, switchMap } from 'rxjs/operators';
 import { BookModel } from '../models/book.model';
-import * as fromBook from '@books/book.reducer';
-import { Store } from '@ngrx/store';
-import * as bookActions from '@books/book.actions';
 import { SortDirectionEnum } from '@shared/enums/sort-direction.enum';
+import * as fromBook from '@books/book.reducer';
+import * as bookSelectors from '@books/book.selectors';
+import * as bookActions from '@books/book.actions';
+import { environment } from '@environments/environment';
 
 @Injectable()
 export class BookService {
@@ -14,13 +16,13 @@ export class BookService {
   books$: Observable<BookModel[]>;
 
   constructor(private http: HttpClient, private store: Store<fromBook.State>) {
-    this.selectedBook$ = this.store.select(fromBook.getSelectedBook);
+    this.selectedBook$ = this.store.select(bookSelectors.getSelectedBook);
 
     this.books$ = combineLatest(
-      this.store.select(fromBook.selectAll),
-      this.store.select(fromBook.getSearchTerm),
-      this.store.select(fromBook.getTitleSorting),
-      this.store.select(fromBook.getYearSorting))
+      this.store.select(bookSelectors.selectAll),
+      this.store.select(bookSelectors.getSearchTerm),
+      this.store.select(bookSelectors.getTitleSorting),
+      this.store.select(bookSelectors.getYearSorting))
     .pipe(
       switchMap(([books, searchTerm, titleDir, yearDir]) => {
         return from(books)
@@ -34,7 +36,7 @@ export class BookService {
   }
 
   getBooks(): Observable<BookModel[]> {
-    return this.http.get('/assets/books.json')
+    return this.http.get(environment.booksUrl)
       .pipe(
         map((books: Partial<BookModel[]>) => books
           .map((book: Partial<BookModel>) => {
@@ -61,11 +63,11 @@ export class BookService {
   }
 
   getBookById(id: string): Observable<BookModel> {
-    return this.store.select(fromBook.getBookById(id));
+    return this.store.select(bookSelectors.getBookById(id));
   }
 
   getDashboardState(): Observable<object> {
-    return this.store.select(fromBook.getDasboardState);
+    return this.store.select(bookSelectors.getDasboardState);
   }
 
   sortBooksByTitle(direction) {
