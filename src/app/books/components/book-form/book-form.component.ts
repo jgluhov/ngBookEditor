@@ -1,27 +1,37 @@
-import { Component, OnInit, Input, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectorRef,
+  EventEmitter,
+  Output,
+  OnChanges
+} from '@angular/core';
+import {
+  FormArray,
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 import { BookModel } from '@books/models/book.model';
-import { ValidateRange } from '@books/validations/range.validation';
-import { ValidateGreaterThan } from '@books/validations/greater-than.vaidation';
-import { ValidateGreaterThanDate } from '@books/validations/greater-than-date.validation';
-import { ValidateISBN } from '@books/validations/isbn.validation';
-import { ValidateYear } from '../../validations/year.validation';
+import {
+  ValidateYear,
+  ValidateISBN,
+  ValidateGreaterThanDate,
+  ValidateGreaterThan,
+  ValidateRange
+} from '@books/validations';
 
 @Component({
   selector: 'app-book-form',
   templateUrl: './book-form.component.html',
   styleUrls: ['./book-form.component.scss']
 })
-export class BookFormComponent implements OnInit {
+export class BookFormComponent implements OnInit, OnChanges {
   selectedBook: BookModel;
   imageUrl = '';
   @Output() submitted = new EventEmitter<BookModel>();
-  @Input() set book(book: BookModel) {
-    if (book) {
-      this.bookForm.patchValue(book);
-      this.imageUrl = book.imageUrl;
-    }
-  }
+  @Input() book: BookModel;
 
   bookForm = this.fb.group({
     id: [''],
@@ -46,6 +56,17 @@ export class BookFormComponent implements OnInit {
   }, {
     updateOn: 'blur'
   });
+
+  ngOnChanges(): void {
+    if (this.book && this.book.id) {
+
+      this.emptyAuthors();
+      this.imageUrl = this.book.imageUrl;
+      this.book.authors
+        .forEach(() => this.authors.push(this.createAuthor()));
+      this.bookForm.patchValue(this.book);
+    }
+  }
 
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) { }
 
@@ -84,6 +105,12 @@ export class BookFormComponent implements OnInit {
     }
 
     this.submitted.emit(book);
+  }
+
+  emptyAuthors() {
+    while (this.authors.controls.length > 0) {
+      this.authors.removeAt(0);
+    }
   }
 
   validateAll(formGroup: FormGroup) {
