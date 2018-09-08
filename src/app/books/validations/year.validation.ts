@@ -1,7 +1,7 @@
 import { AbstractControl } from '@angular/forms';
 
 export function ValidateYear(control: AbstractControl) {
-  const isYear = (val: string) => /\d{4}/.test(val);
+  const isYear = (val: string) => /^\d{4}$/.test(val);
   const isNumber = (val: string) => !isNaN(+val);
   const isEmpty = (val: string) => val === '';
 
